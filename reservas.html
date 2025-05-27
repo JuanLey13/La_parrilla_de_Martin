@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | La Parrilla de Martín</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styler.css">
+</head>
+<body>
+    <!-- Preloader Completo -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Header Completo -->
+    <header class="cabecera">
+        <nav class="nav-contenedor">
+            <div class="logo-marca">
+                <img src="img/Logo.jpeg" alt="Logo Parrilla Martín" class="logo">
+                <span class="marca"> La Parrilla<br> de Martín</span>
+            </div>
+            
+            <ul class="menu-nav">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#menu" class="nav-link">Menú</a></li>
+                <li><a href="index.html#experiencia" class="nav-link">Experiencia</a></li>
+                <li><a href="reservas.html" class="nav-link active">Reservas</a></li>
+            </ul>
+            
+            <div class="nav-derecha">
+                <a href="reservas.html" class="boton-reserva">Reservar Ahora <i class="fas fa-chevron-right"></i></a>
+                <div class="hamburguesa">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de Reservas Completa -->
+    <section class="seccion-reservas">
+        <div class="contenedor">
+            <div class="encabezado-seccion" data-aos="fade-up">
+                <h2 class="titulo-seccion">Reserva <span class="destacado">Tu Experiencia</span></h2>
+                <p class="subtitulo-seccion">Disfruta de nuestra cocina en 3 simples pasos</p>
+            </div>
+
+            <form class="formulario-reserva" id="formReserva">
+                <!-- Paso 1: Información Personal -->
+                <div class="paso-reserva activo" data-paso="1">
+                    <h3>1. Tus Datos</h3>
+                    <div class="grid-form">
+                        <div class="form-group">
+                            <label>Nombre Completo *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Celular *</label>
+                            <input type="tel" pattern="[0-9]{9}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha y Hora *</label>
+                            <input type="datetime-local" required>
+                        </div>
+                        <div class="form-group">
+                            <label>N° de Personas *</label>
+                            <select required>
+                                <option value="">Seleccionar</option>
+                                <option>1-2 personas</option>
+                                <option>3-4 personas</option>
+                                <option>5-6 personas</option>
+                                <option>7+ personas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Selección de Menú -->
+                <div class="paso-reserva" data-paso="2">
+                    <h3>2. Elige tus Platos</h3>
+                    <div class="grid-menu-reserva">
+                        <div class="item-menu">
+                            <label class="checkbox-plato">
+                                <input type="checkbox" name="platos">
+                                <div class="plato-content">
+                                    <h4>Lomo Black Premium</h4>
+                                    <p>Corte premium con ahumado en roble</p>
+                                    <div class="precio-plato">S/ 68.00</div>
+                                </div>
+                            </label>
+                        </div>
+                        <!-- Repetir más platos -->
+                    </div>
+                </div>
+
+                <!-- Paso 3: Método de Pago -->
+                <div class="paso-reserva" data-paso="3">
+                    <h3>3. Confirmación y Pago</h3>
+                    <div class="metodos-pago">
+                        <div class="metodo-pago">
+                            <input type="radio" name="metodoPago" id="yape" required>
+                            <label for="yape" class="tarjeta-metodo">
+                                <img src="img/yape-logo.png" alt="Yape" class="logo-pago">
+                                <div class="qr-yape">
+                                    <img src="img/qr-yape.jpg" alt="QR Yape" class="qr-code">
+                                    <p>Escanea el código para pagar</p>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="metodo-pago">
+                            <input type="radio" name="metodoPago" id="plin">
+                            <label for="plin" class="tarjeta-metodo">
+                                <img src="img/plin-logo.png" alt="Plin" class="logo-pago">
+                                <div class="qr-plin">
+                                    <img src="img/qr-plin.jpg" alt="QR Plin" class="qr-code">
+                                    <p>Escanea el código para pagar</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles de Navegación -->
+                <div class="controles-pasos">
+                    <button type="button" class="boton-paso anterior">Anterior</button>
+                    <button type="button" class="boton-paso siguiente">Siguiente</button>
+                    <button type="submit" class="boton-paso enviar">Confirmar Reserva</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Completo -->
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="grid-footer">
+                <div class="footer-columna">
+                    <h4>Explorar</h4>
+                    <ul class="menu-footer">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#menu">Menú</a></li>
+                        <li><a href="index.html#experiencia">Experiencia</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-columna">
+                    <h4>Contacto</h4>
+                    <div class="info-contacto">
+                        <p><i class="fas fa-map-marker-alt"></i> Calle Mercaderes 315, Arequipa</p>
+                        <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+                        <p><i class="fas fa-envelope"></i> contacto@parrillamartin.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-columna">
+                    <h4>Horario</h4>
+                    <div class="horario">
+                        <p>Lunes - Viernes: 12pm - 11pm</p>
+                        <p>Sábado - Domingo: 11am - 12am</p>
+                    </div>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="derechos">
+                <p>© 2024 La Parrilla de Martín. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').classList.add('loaded');
+        });
+
+        // Navegación móvil
+        const hamburguesa = document.querySelector('.hamburguesa');
+        const menuNav = document.querySelector('.menu-nav');
+
+        hamburguesa.addEventListener('click', () => {
+            hamburguesa.classList.toggle('active');
+            menuNav.classList.toggle('active');
+        });
+
+        // Manejo de pasos del formulario
+        const pasos = document.querySelectorAll('.paso-reserva');
+        const btnAnterior = document.querySelector('.anterior');
+        const btnSiguiente = document.querySelector('.siguiente');
+        const btnEnviar = document.querySelector('.enviar');
+        let pasoActual = 1;
+
+        function mostrarPaso(n) {
+            pasos.forEach(paso => {
+                paso.classList.remove('activo');
+                if(parseInt(paso.dataset.paso) === n) {
+                    paso.classList.add('activo');
+                }
+            });
+
+            btnAnterior.style.display = n === 1 ? 'none' : 'inline-block';
+            btnSiguiente.style.display = n === 3 ? 'none' : 'inline-block';
+            btnEnviar.style.display = n === 3 ? 'inline-block' : 'none';
+        }
+
+        btnSiguiente.addEventListener('click', () => {
+            if(pasoActual < 3) pasoActual++ && mostrarPaso(pasoActual);
+        });
+
+        btnAnterior.addEventListener('click', () => {
+            if(pasoActual > 1) pasoActual-- && mostrarPaso(pasoActual);
+        });
+
+        // Mostrar QR al seleccionar método de pago
+        document.querySelectorAll('input[name="metodoPago"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                document.querySelectorAll('.qr-yape, .qr-plin').forEach(qr => {
+                    qr.style.display = 'none';
+                });
+                if(e.target.checked) {
+                    const qr = e.target.parentNode.querySelector('div');
+                    qr.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

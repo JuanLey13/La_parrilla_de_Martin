@@ -1,0 +1,485 @@
+:root {
+    --dorado: #D4AF37;
+    --negro: #1A1A1A;
+    --gris-oscuro: #2D2D2D;
+    --blanco: #FFFFFF;
+    --transicion: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --sombra: 0 15px 40px rgba(0,0,0,0.2);
+}
+/* ======================== */
+/* ESTILOS GENERALES DEL BODY */
+/* ======================== */
+body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    min-height: 100vh;
+}
+/* Preloader Completo */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--negro);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+.preloader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: var(--dorado);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.preloader.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Header Completo */
+.cabecera {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(26,26,26,0.95);
+    backdrop-filter: blur(10px);
+    transition: var(--transicion);
+}
+
+.nav-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-marca {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    transition: transform 0.3s;
+    border-radius: 25%;
+}
+
+.marca {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--dorado);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transicion);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--dorado);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--dorado);
+}
+
+.boton-reserva {
+    background: var(--dorado);
+    color: var(--negro);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transicion);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.boton-reserva:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+}
+
+.hamburguesa {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: var(--blanco);
+    transition: var(--transicion);
+}
+
+/* Sección Reservas */
+.seccion-reservas {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+}
+
+.contenedor {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.titulo-seccion {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--blanco);
+}
+
+.destacado {
+    color: var(--dorado);
+}
+
+.subtitulo-seccion {
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.formulario-reserva {
+    background: rgba(45, 45, 45, 0.95); /* Fondo oscuro semi-transparente */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Borde dorado sutil */
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+.paso-reserva {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.paso-reserva.activo {
+    display: block;
+}
+
+.paso-reserva h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dorado);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.5) !important; /* Fondo más oscuro */
+    border: 1px solid var(--dorado) !important; /* Borde dorado */
+    border-radius: 8px;
+    color: var(--blanco) !important;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transicion);
+}
+
+/* Placeholders visibles */
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1; /* Asegura visibilidad en todos navegadores */
+}
+
+/* Selectores desplegables */
+.form-group select option {
+    background: var(--gris-oscuro);
+    color: var(--blanco);
+}
+.grid-menu-reserva {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.item-menu {
+    background: var(--negro);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transicion);
+}
+
+.checkbox-plato input:checked + .plato-content {
+    background: rgba(212, 175, 55, 0.1) !important;
+    border: 2px solid var(--dorado) !important;
+    transform: scale(1.02); /* Efecto sutil de selección */
+}
+
+.checkbox-plato input {
+    display: none;
+}
+
+.checkbox-plato input:checked + .plato-content {
+    border-color: var(--dorado);
+    background: rgba(212,175,55,0.05);
+}
+
+.plato-content {
+    border: 2px solid transparent;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: var(--transicion);
+}
+
+.plato-content h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.plato-content p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+.precio-plato {
+    color: var(--dorado);
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.metodos-pago {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tarjeta-metodo {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    transition: var(--transicion);
+}
+
+.tarjeta-metodo:hover {
+    border-color: var(--dorado) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.logo-pago {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.qr-yape,
+.qr-plin {
+    display: none;
+}
+
+.controles-pasos {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.boton-paso {
+    background: var(--dorado);
+    color: var(--negro);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: var(--transicion);
+    font-weight: 600;
+}
+
+.boton-paso:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+}
+
+/* Footer Completo */
+.footer {
+    background: var(--gris-oscuro);
+    padding: 4rem 0 2rem;
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-columna h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado);
+    margin-bottom: 1.5rem;
+}
+
+.menu-footer {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-footer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu-footer a:hover {
+    color: var(--dorado);
+}
+
+.info-contacto p {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.info-contacto i {
+    color: var(--dorado);
+    min-width: 20px;
+}
+
+.horario p {
+    margin: 1rem 0;
+    color: rgba(255,255,255,0.8);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.redes-sociales a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.redes-sociales a:hover {
+    color: var(--dorado);
+}
+
+.derechos {
+    text-align: center;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: block;
+    }
+
+    .menu-nav {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--negro);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        transition: 0.3s;
+    }
+
+    .menu-nav.active {
+        right: 0;
+    }
+
+    .bar.active {
+        background: var(--dorado);
+    }
+
+    .grid-form,
+    .grid-menu-reserva,
+    .metodos-pago {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion {
+        font-size: 2rem;
+    }
+
+    .paso-reserva h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
