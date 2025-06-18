@@ -414,7 +414,7 @@ body {
 
 .ingredientes-lista {
     list-style: none;
-    text-align: center;
+    text-align: justify;
 }
 
 .ingredientes-lista li {
@@ -456,6 +456,7 @@ body {
 .plato-desc {
     color: rgba(255,255,255,0.8);
     margin-bottom: 1.5rem;
+    text-align: justify;
 }
 
 .plato-footer {
@@ -703,7 +704,9 @@ body {
 
     .plato-imagen {
         height: 250px;
+        
     }
+    
 }
 
 @media (max-width: 576px) {
