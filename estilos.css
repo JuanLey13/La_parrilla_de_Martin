@@ -1141,3 +1141,192 @@ body {
         font-size: 0;
     }
 }
+
+/* Añadir estas reglas al final del archivo */
+
+/* Optimización de barra de navegación en móviles */
+@media (max-width: 767px) {
+    .nav-contenedor {
+        flex-wrap: nowrap;
+        padding: 0.5rem 5%;
+    }
+
+    .logo-marca {
+        min-width: auto;
+        overflow: hidden;
+        gap: 0.5rem;
+    }
+
+    .marca {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90px;
+        line-height: 1.1;
+    }
+
+    .logo {
+        width: 35px;
+    }
+
+    .boton-reserva {
+        padding: 0.6rem;
+        min-width: auto;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .texto-reserva {
+        display: none;
+    }
+
+    .icono-reserva {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .nav-derecha {
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .marca {
+        font-size: 0.75rem;
+        max-width: 70px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .boton-reserva {
+        padding: 0.5rem;
+        width: 36px;
+        height: 36px;
+    }
+
+    .icono-reserva {
+        font-size: 0.9rem;
+    }
+}
+
+/* Botón de reserva para escritorio */
+@media (min-width: 768px) {
+    .texto-reserva {
+        display: inline;
+    }
+
+    .icono-reserva {
+        display: inline;
+    }
+}
+
+/* Añadir al final del archivo */
+
+/* Optimización de barra de navegación en móviles */
+@media (max-width: 991px) {
+    .nav-contenedor {
+        flex-wrap: nowrap;
+        padding: 0.8rem 3%;
+    }
+
+    .logo-marca {
+        min-width: 0;
+        /* Permite que se reduzca */
+        overflow: hidden;
+        flex-shrink: 1;
+        /* Permite encogerse */
+    }
+
+    .marca {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        line-height: 1.1;
+    }
+
+    .logo {
+        width: 35px;
+        flex-shrink: 0;
+        /* Evita que el logo se reduzca */
+    }
+
+    .boton-reserva {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        min-width: max-content;
+        /* Asegura que el texto no se rompa */
+    }
+
+    .nav-derecha {
+        gap: 0.8rem;
+        flex-shrink: 0;
+        /* Evita que se reduzca */
+    }
+
+    .hamburguesa {
+        margin-left: 0.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .marca {
+        font-size: 0.8rem;
+        max-width: 90px;
+    }
+
+    .logo {
+        width: 30px;
+    }
+
+    .boton-reserva {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-contenedor {
+        padding: 0.5rem 3%;
+    }
+
+    .marca {
+        font-size: 0.75rem;
+        max-width: 80px;
+    }
+
+    .logo {
+        width: 28px;
+    }
+
+    .boton-reserva {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .marca {
+        font-size: 0.7rem;
+        max-width: 70px;
+    }
+
+    .boton-reserva {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .hamburguesa {
+        margin-left: 0.3rem;
+    }
+}
