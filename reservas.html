@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styler.css">
 </head>
+
 <body>
     <!-- Preloader Completo -->
     <div class="preloader">
@@ -24,14 +28,14 @@
                 <img src="img/Logo.jpeg" alt="Logo Parrilla Martín" class="logo">
                 <span class="marca"> La Parrilla<br> de Martín</span>
             </div>
-            
+
             <ul class="menu-nav">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="index.html#menu" class="nav-link">Menú</a></li>
                 <li><a href="index.html#experiencia" class="nav-link">Experiencia</a></li>
                 <li><a href="reservas.html" class="nav-link active">Reservas</a></li>
             </ul>
-            
+
             <div class="nav-derecha">
                 <a href="reservas.html" class="boton-reserva">Reservar Ahora <i class="fas fa-chevron-right"></i></a>
                 <div class="hamburguesa">
@@ -58,11 +62,7 @@
                     <div class="grid-form">
                         <div class="form-group">
                             <label>Nombre Completo *</label>
-<<<<<<< HEAD
                             <input name="nombre" type="text" required>
-=======
-                            <input name="nombres" type="text" required>
->>>>>>> ff3dc4c1f9696010bc351ebbc3ec85a601d9929e
                         </div>
                         <div class="form-group">
                             <label>Celular *</label>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group">
                             <label>N° de Personas *</label>
-                            <select name="personas"  required>
+                            <select name="personas" required>
                                 <option value="">Seleccionar</option>
                                 <option>1-2 personas</option>
                                 <option>3-4 personas</option>
@@ -117,7 +117,7 @@
                                 </div>
                             </label>
                         </div>
-                        
+
                         <div class="metodo-pago">
                             <input type="radio" name="metodoPago" id="plin">
                             <label for="plin" class="tarjeta-metodo">
@@ -154,7 +154,7 @@
                         <li><a href="reservas.html">Reservas</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-columna">
                     <h4>Contacto</h4>
                     <div class="info-contacto">
@@ -163,7 +163,7 @@
                         <p><i class="fas fa-envelope"></i> contacto@parrillamartin.com</p>
                     </div>
                 </div>
-                
+
                 <div class="footer-columna">
                     <h4>Horario</h4>
                     <div class="horario">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="derechos">
                 <p>© 2024 La Parrilla de Martín. Todos los derechos reservados.</p>
             </div>
@@ -216,7 +216,7 @@
         function mostrarPaso(n) {
             pasos.forEach(paso => {
                 paso.classList.remove('activo');
-                if(parseInt(paso.dataset.paso) === n) {
+                if (parseInt(paso.dataset.paso) === n) {
                     paso.classList.add('activo');
                 }
             });
@@ -227,11 +227,11 @@
         }
 
         btnSiguiente.addEventListener('click', () => {
-            if(pasoActual < 3) pasoActual++ && mostrarPaso(pasoActual);
+            if (pasoActual < 3) pasoActual++ && mostrarPaso(pasoActual);
         });
 
         btnAnterior.addEventListener('click', () => {
-            if(pasoActual > 1) pasoActual-- && mostrarPaso(pasoActual);
+            if (pasoActual > 1) pasoActual-- && mostrarPaso(pasoActual);
         });
 
         // Mostrar QR al seleccionar método de pago
@@ -240,7 +240,7 @@
                 document.querySelectorAll('.qr-yape, .qr-plin').forEach(qr => {
                     qr.style.display = 'none';
                 });
-                if(e.target.checked) {
+                if (e.target.checked) {
                     const qr = e.target.parentNode.querySelector('div');
                     qr.style.display = 'block';
                 }
@@ -248,4 +248,5 @@
         });
     </script>
 </body>
+
 </html>
