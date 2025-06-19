@@ -1,0 +1,1 @@
+{"tipo":"recojo","items":[{"id":1,"nombre":"Asado de tira","precio":37,"cantidad":5},{"id":5,"nombre":"Cordero costilla","precio":37,"cantidad":1}],"costoDelivery":0,"subtotal":222,"total":222}

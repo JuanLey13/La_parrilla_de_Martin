@@ -332,7 +332,37 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Aquí normalmente enviarías los datos al servidor
-        alert('¡Pedido realizado con éxito! En breve nos comunicaremos con usted para confirmar.');
+        fetch('guardar-pedido.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pedido)
+        })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Mensaje del servidor (PHP)
+                // Limpieza visual si todo salió bien
+                document.querySelectorAll('input, select, textarea').forEach(el => {
+                    if (el.type !== 'radio' && el.type !== 'checkbox') {
+                        el.value = '';
+                    }
+                });
+                pedido = {
+                    tipo: "reservacion",
+                    items: [],
+                    costoDelivery: 0,
+                    subtotal: 0,
+                    total: 0
+                };
+                actualizarResumen();
+                cargarPlatos();
+            })
+            .catch(error => {
+                alert('❌ Error al enviar el pedido.');
+                console.error(error);
+            });
+
 
         // Resetear formulario
         document.querySelectorAll('input, select, textarea').forEach(el => {
