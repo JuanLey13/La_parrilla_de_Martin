@@ -134,4 +134,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Ejecutar periódicamente por si hay elementos que se cargan tarde
     setInterval(fixOverflow, 500);
+
 });

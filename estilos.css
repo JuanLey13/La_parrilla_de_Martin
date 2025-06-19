@@ -920,15 +920,46 @@ body {
         padding: 0.8rem 0;
     }
 
-    /* Hero - Ocultar video en móvil */
-    .video-fondo {
-        display: none;
-    }
+    @media (max-width: 767px) {
+        /* ... (mantén el resto de tu código existente) ... */
 
-    .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero-mobile.jpg') center/cover no-repeat;
-        margin-top: -60px;
-        padding-top: 60px;
+        /* ===== MOSTRAR Y OPTIMIZAR VIDEO EN MÓVILES ===== */
+        .video-fondo {
+            display: block;
+            /* Mostrar el video */
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            transform: translate(-50%, -50%) scale(1.05);
+            /* Pequeño zoom para cubrir bordes */
+        }
+
+        .hero {
+            background: none;
+            /* Eliminar imagen de fondo */
+            overflow: hidden;
+            /* Prevenir desplazamiento horizontal */
+            margin-top: -60px;
+            padding-top: 60px;
+        }
+
+        /* Mejorar contraste para texto */
+        .video-overlay {
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65));
+        }
+
+        /* Ajustar tamaño de texto */
+        .titulo-hero {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .boton-explorar {
+            padding: 0.8rem 1.6rem;
+            font-size: 0.9rem;
+        }
     }
 
     .titulo-hero {
@@ -1038,39 +1069,22 @@ body {
     }
 }
 
-/* Ajustes adicionales para pantallas muy pequeñas */
+/* Optimización para pantallas muy pequeñas */
 @media (max-width: 480px) {
-    .logo {
-        width: 40px;
-    }
-
-    .marca {
-        font-size: 0.9rem;
-    }
-
-    .boton-reserva {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
+    .video-fondo {
+        transform: translate(-50%, -50%) scale(1.1);
+        /* Más zoom para pantallas pequeñas */
     }
 
     .titulo-hero {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        padding: 0 10px;
+        /* Asegurar que no salga de pantalla */
     }
 
-    .plato-imagen {
-        height: 220px;
-    }
-
-    .plato-badge {
-        font-size: 0.7rem;
-        padding: 0.3rem 1rem;
-    }
-
-    .plato-encabezado h3 {
-        font-size: 1.1rem;
-    }
-
-    .precio {
-        font-size: 1rem;
+    .subtitulo-hero {
+        font-size: 0.85rem;
+        padding: 0 15px;
+        /* Asegurar que no salga de pantalla */
     }
 }
