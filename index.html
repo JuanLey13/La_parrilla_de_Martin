@@ -1,5 +1,7 @@
-2<!DOCTYPE html>
+2
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
     <!-- Carga inicial -->
     <div class="preloader">
@@ -24,7 +29,7 @@
                 <img src="img/Logo.jpeg" alt="Logo Parrilla Martín" class="logo">
                 <span class="marca"> La Parrilla<br> de Martín</span>
             </div>
-            
+
             <ul class="menu-nav">
                 <li><a href="#hero" class="nav-link">Inicio</a></li>
                 <li><a href="#menu" class="nav-link">Menú</a></li>
@@ -32,7 +37,7 @@
                 <li><a href="#galeria" class="nav-link">Galería</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
-            
+
             <div class="nav-derecha">
                 <a href="reservas.html" class="boton-reserva">Reservaciones <i class="fas fa-chevron-right"></i></a>
                 <div class="hamburguesa">
@@ -52,7 +57,7 @@
             </video>
             <div class="video-overlay"></div>
         </div>
-        
+
         <div class="hero-contenido" data-aos="fade-up" data-aos-delay="300">
             <h1 class="titulo-hero">
                 <span class="titulo-linea">Sabores que</span>
@@ -65,7 +70,7 @@
                 <div class="efecto-hover"></div>
             </a>
         </div>
-        
+
         <div class="scroll-indicador">
             <div class="mouse">
                 <div class="rueda"></div>
@@ -76,26 +81,28 @@
     <!-- Menú Premium -->
     <section class="seccion-menu" id="menu">
         <div class="contenedor">
-            <div class="encabezado-seccion" data-aos="fade-up">
+            <div class="    encabezado-seccion" data-aos="fade-up">
                 <h2 class="titulo-seccion">Nuestra <span class="destacado">Excelencia</span></h2>
                 <p class="subtitulo-seccion">10 creaciones magistrales de nuestro chef</p>
+            </div>
+            <div class="categorias-menu">
+                <button class="boton-categoria activo" data-categoria="todos">Todos</button>
+                <button class="boton-categoria" data-categoria="carne">Cortes especiales</button>
+                <button class="boton-categoria" data-categoria="cordero">Cordero</button>
+                <button class="boton-categoria" data-categoria="especiales">Criollos</button>
             </div>
 
             <div class="grid-menu">
                 <!-- Plato 1 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
-<<<<<<< HEAD
                         <img src="img/ASADO.jpg" alt="Lomo Premium">
-=======
-                        <img src="img/asado_de_tira.jpeg" alt="Lomo Premium">
->>>>>>> ff3dc4c1f9696010bc351ebbc3ec85a601d9929e
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
                                 <h3>Acompañado con: </h3>
                                 <ul class="ingredientes-lista">
-                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
+                                    <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
                                     <li>SALSAS</li>
                                 </ul>
@@ -108,11 +115,11 @@
                             <div class="precio">S/ 37.00</div>
                         </div>
                         <p class="plato-desc">Corte tradicional que proviene de las costillas delantera de la res,
-                             específicamente del costillar. Se presenta en tiras gruesas con hueso, lo que le aporta 
-                             un sabor profundo y jugoso. Cocinado lentamente a la parrilla, este corte combina carne,
-                             grasa y hueso en una explosión de sabor ahumado y tierno que se deshace en la boca. Ideal 
-                             para los verdaderos amantes de la carne.<br>
-                             </p>
+                            específicamente del costillar. Se presenta en tiras gruesas con hueso, lo que le aporta
+                            un sabor profundo y jugoso. Cocinado lentamente a la parrilla, este corte combina carne,
+                            grasa y hueso en una explosión de sabor ahumado y tierno que se deshace en la boca. Ideal
+                            para los verdaderos amantes de la carne.<br>
+                        </p>
                         <div class="plato-footer">
                             <span class="calorias">500 gramos</span>
                             <div class="rating">
@@ -121,8 +128,8 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 2 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 2 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/Picaña.png" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -130,7 +137,7 @@
                             <div class="overlay-contenido">
                                 <h3>Acompañado con: </h3>
                                 <ul class="ingredientes-lista">
-                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
+                                    <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
                                     <li>SALSAS</li>
                                 </ul>
@@ -142,12 +149,12 @@
                             <h3>Picaña</h3>
                             <div class="precio">S/ 42.00</div>
                         </div>
-                        <p class="plato-desc">Extraída de la parte alta de la cadera, justo sobre el cuadril, 
-                            la picaña destaca por su forma triangular y su capa de grasa natural que realza 
-                            cada fibra de la carne. Al fuego lento de la parrilla, esta grasa se derrite 
-                            lentamente, impregnando la carne con un sabor profundo, jugoso y lleno de carácter. 
-                            Se sirve en láminas gruesas, 
-                            tiernas por dentro y con un dorado perfecto por fuera. 
+                        <p class="plato-desc">Extraída de la parte alta de la cadera, justo sobre el cuadril,
+                            la picaña destaca por su forma triangular y su capa de grasa natural que realza
+                            cada fibra de la carne. Al fuego lento de la parrilla, esta grasa se derrite
+                            lentamente, impregnando la carne con un sabor profundo, jugoso y lleno de carácter.
+                            Se sirve en láminas gruesas,
+                            tiernas por dentro y con un dorado perfecto por fuera.
                         </p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
@@ -157,8 +164,8 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 3 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 3 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/Bife-angosto-Arg.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -169,7 +176,7 @@
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
                                     <li>SALSAS</li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -179,12 +186,12 @@
                             <h3>Bife angosto</h3>
                             <div class="precio">S/ 41.00</div>
                         </div>
-                        <p class="plato-desc">Proviene del lomo corto de la res, una zona con equilibrio 
+                        <p class="plato-desc">Proviene del lomo corto de la res, una zona con equilibrio
                             perfecto entre músculo y grasa intramuscular. Este corte se caracteriza por
-                             su forma rectangular y su textura firme pero jugosa. A la parrilla, desarrolla 
-                             una costra dorada por fuera y mantiene un interior tierno y lleno de sabor. 
-                             Ideal para quienes disfrutan un buen bocado de carne con carácter, jugosidad 
-                             y un toque de ahumado en cada corte.</p>
+                            su forma rectangular y su textura firme pero jugosa. A la parrilla, desarrolla
+                            una costra dorada por fuera y mantiene un interior tierno y lleno de sabor.
+                            Ideal para quienes disfrutan un buen bocado de carne con carácter, jugosidad
+                            y un toque de ahumado en cada corte.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -193,14 +200,14 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 4 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 4 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/bife-ancho.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                  <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -214,11 +221,11 @@
                             <h3>Bife ancho</h3>
                             <div class="precio">S/ 41.00</div>
                         </div>
-                        <p class="plato-desc">Ubicado en la parte delantera del lomo, el bife ancho es un corte 
+                        <p class="plato-desc">Ubicado en la parte delantera del lomo, el bife ancho es un corte
                             generoso con abundante marmoleo, lo que le da una jugosidad excepcional. Su grasa
-                             entreverada se funde durante la cocción, aportando un sabor profundo y mantecoso.
-                              A la parrilla, logra una costra sabrosa por fuera y una textura suave por dentro.
-                               Ideal para los que buscan una experiencia intensa y sabrosa en cada bocado.</p>
+                            entreverada se funde durante la cocción, aportando un sabor profundo y mantecoso.
+                            A la parrilla, logra una costra sabrosa por fuera y una textura suave por dentro.
+                            Ideal para los que buscan una experiencia intensa y sabrosa en cada bocado.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -227,14 +234,14 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 5 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 5 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/rib-eye.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                              <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -248,11 +255,11 @@
                             <h3>Rib-eye</h3>
                             <div class="precio">S/ 43.00</div>
                         </div>
-                        <p class="plato-desc">Corte premium extraído de la parte alta del costillar, 
-                            entre la sexta y la décima costilla. Reconocido por su marmoleo abundante 
-                            y su ojo central de grasa que se derrite al asarse, el Rib-Eye ofrece una 
-                            textura increíblemente suave y un sabor rico e intenso. 
-                            Dorado por fuera, jugoso por dentro: una pieza de carne que despierta los 
+                        <p class="plato-desc">Corte premium extraído de la parte alta del costillar,
+                            entre la sexta y la décima costilla. Reconocido por su marmoleo abundante
+                            y su ojo central de grasa que se derrite al asarse, el Rib-Eye ofrece una
+                            textura increíblemente suave y un sabor rico e intenso.
+                            Dorado por fuera, jugoso por dentro: una pieza de carne que despierta los
                             sentidos y conquista a los paladares más exigentes.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
@@ -262,8 +269,8 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 6 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 6 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/cuadril.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -284,12 +291,12 @@
                             <div class="precio">S/ 42.00</div>
                         </div>
                         <p class="plato-desc">Un clásico infaltable para los amantes de la buena carne.
-                             Este corte, ubicado en la parte trasera del lomo, destaca por su sabor 
-                             auténtico y su textura firme pero jugosa. Tiene una capa de grasa que se 
-                             derrite lentamente al asarse, impregnando la carne con un gusto profundo y
-                              delicioso. A la parrilla, se dora por fuera logrando una costra irresistible, 
-                              mientras que por dentro se mantiene tierno y sabroso. Ideal para quienes buscan
-                               un corte tradicional, lleno de sabor y perfecto para compartir.</p>
+                            Este corte, ubicado en la parte trasera del lomo, destaca por su sabor
+                            auténtico y su textura firme pero jugosa. Tiene una capa de grasa que se
+                            derrite lentamente al asarse, impregnando la carne con un gusto profundo y
+                            delicioso. A la parrilla, se dora por fuera logrando una costra irresistible,
+                            mientras que por dentro se mantiene tierno y sabroso. Ideal para quienes buscan
+                            un corte tradicional, lleno de sabor y perfecto para compartir.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -298,14 +305,14 @@
                         </div>
                     </div>
                 </article>
- <!-- Plato 7 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 7 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/portehouse.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                    <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -320,21 +327,22 @@
                             <div class="precio">S/ 82.00</div>
                         </div>
                         <p class="plato-desc">El Porterhouse a la parrilla es un corte grueso y
-                             jugoso que une dos de las mejores carnes en una sola pieza: el lomo fino, 
-                             conocido por su suavidad extrema, y el bife de chorizo, famoso por su sabor 
-                             intenso y textura firme. Ambos lados están separados por un hueso en forma de “T” que,
+                            jugoso que une dos de las mejores carnes en una sola pieza: el lomo fino,
+                            conocido por su suavidad extrema, y el bife de chorizo, famoso por su sabor
+                            intenso y textura firme. Ambos lados están separados por un hueso en forma de “T” que,
                             al cocinarse a la brasa, realza el sabor y mantiene la jugosidad. Es un corte ideal
-                            para quienes buscan una experiencia completa: ternura, sabor y ese aroma irresistible a parrilla.</p>
+                            para quienes buscan una experiencia completa: ternura, sabor y ese aroma irresistible a
+                            parrilla.</p>
                         <div class="plato-footer">
                             <span class="calorias">800 gramos </span>
                             <div class="rating">
-                                <i class="fas fa-star"></i> 45-50 min 
+                                <i class="fas fa-star"></i> 45-50 min
                             </div>
                         </div>
                     </div>
                 </article>
- <!-- Plato 8 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 8 -->
+                <article class="tarjeta-plato cordero" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/cordero-piernaa.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -355,30 +363,30 @@
                             <div class="precio">S/ 37.00</div>
                         </div>
                         <p class="plato-desc">La pierna de cordero es un corte grande y
-                             fibroso que proviene del cuarto trasero del animal.
-                              A la parrilla, su cocción lenta permite que el calor
-                               penetre de forma uniforme, logrando una carne suave,
-                                jugosa y de sabor intenso. Su capa externa se dora al 
-                                contacto con el fuego, mientras que el interior conserva 
-                                su humedad natural. Es un corte con presencia, ideal para
-                                 quienes buscan una experiencia completa: textura firme, 
-                                 sabor profundo y el clásico aroma ahumado que solo da la brasa.</p>
+                            fibroso que proviene del cuarto trasero del animal.
+                            A la parrilla, su cocción lenta permite que el calor
+                            penetre de forma uniforme, logrando una carne suave,
+                            jugosa y de sabor intenso. Su capa externa se dora al
+                            contacto con el fuego, mientras que el interior conserva
+                            su humedad natural. Es un corte con presencia, ideal para
+                            quienes buscan una experiencia completa: textura firme,
+                            sabor profundo y el clásico aroma ahumado que solo da la brasa.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
-                                <i class="fas fa-star"></i> 25-30 min   
+                                <i class="fas fa-star"></i> 25-30 min
                             </div>
                         </div>
                     </div>
                 </article>
- <!-- Plato 9 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 9 -->
+                <article class="tarjeta-plato cordero" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/cordero-costilla.jpeg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                 <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -392,14 +400,14 @@
                             <h3>Cordero costilla</h3>
                             <div class="precio">S/ 37.00</div>
                         </div>
-                        <p class="plato-desc">La costilla de cordero, también conocida como 
-                            rack, es un corte con hueso que destaca por su jugosidad y 
-                            su pronunciado sabor. Cada porción combina carne tierna con 
+                        <p class="plato-desc">La costilla de cordero, también conocida como
+                            rack, es un corte con hueso que destaca por su jugosidad y
+                            su pronunciado sabor. Cada porción combina carne tierna con
                             una capa de grasa que, al asarse, se funde y aporta una textura
-                             crujiente por fuera. El hueso actúa como conductor térmico,
-                              intensificando el sabor durante la cocción a las brasas. 
-                              Es un corte sabroso, de presencia fuerte, perfecto para disfrutar
-                               con las manos y sin apuro.</p>
+                            crujiente por fuera. El hueso actúa como conductor térmico,
+                            intensificando el sabor durante la cocción a las brasas.
+                            Es un corte sabroso, de presencia fuerte, perfecto para disfrutar
+                            con las manos y sin apuro.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -408,14 +416,14 @@
                         </div>
                     </div>
                 </article>
-<!-- Plato 10 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 10 -->
+                <article class="tarjeta-plato cordero" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/cordero-lomo.avif" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                  <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -430,11 +438,11 @@
                             <div class="precio">S/ 39.00</div>
                         </div>
                         <p class="plato-desc">El lomo de cordero es un corte magro y
-                             sumamente tierno, extraído de la parte superior del dorso del 
-                             animal. A la parrilla, desarrolla una textura suave con un sellado 
-                             exterior dorado que concentra sus jugos naturales. Su sabor es delicado 
-                             pero profundo, con una ligera nota grasa que le da carácter sin ser invasiva.
-                              Es ideal para quienes buscan un bocado fino, equilibrado y lleno de elegancia.</p>
+                            sumamente tierno, extraído de la parte superior del dorso del
+                            animal. A la parrilla, desarrolla una textura suave con un sellado
+                            exterior dorado que concentra sus jugos naturales. Su sabor es delicado
+                            pero profundo, con una ligera nota grasa que le da carácter sin ser invasiva.
+                            Es ideal para quienes buscan un bocado fino, equilibrado y lleno de elegancia.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -443,14 +451,14 @@
                         </div>
                     </div>
                 </article>
-<!-- Plato 9 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 9 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/entraña-fina.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                 <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -464,15 +472,15 @@
                             <h3>Entraña fina</h3>
                             <div class="precio">S/ 40.00</div>
                         </div>
-                        <p class="plato-desc">La entraña fina es un corte delgado y 
-                            alargado que se extrae del diafragma de la res. 
-                            Se caracteriza por su intensa jugosidad y un sabor 
+                        <p class="plato-desc">La entraña fina es un corte delgado y
+                            alargado que se extrae del diafragma de la res.
+                            Se caracteriza por su intensa jugosidad y un sabor
                             profundo gracias a su cercanía con órganos internos,
-                             lo que le otorga un perfil único. A la parrilla, 
-                             se cocina rápidamente, formando una costra crujiente 
-                             por fuera mientras el interior permanece tierno.
-                              Es un corte con personalidad, ideal para los que buscan
-                              sabor puro y textura fibrosa sin perder suavidad.</p>
+                            lo que le otorga un perfil único. A la parrilla,
+                            se cocina rápidamente, formando una costra crujiente
+                            por fuera mientras el interior permanece tierno.
+                            Es un corte con personalidad, ideal para los que buscan
+                            sabor puro y textura fibrosa sin perder suavidad.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -481,14 +489,14 @@
                         </div>
                     </div>
                 </article>
-<!-- Plato 9 -->
-                <article class="tarjeta-plato" data-aos="flip-left">
+                <!-- Plato 9 -->
+                <article class="tarjeta-plato carne" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/T-bone.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
                         <div class="plato-overlay">
                             <div class="overlay-contenido">
-                                 <h3>Acomopañado con: </h3>
+                                <h3>Acomopañado con: </h3>
                                 <ul class="ingredientes-lista">
                                     <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
                                     <li>ENSALADA</li>
@@ -502,13 +510,13 @@
                             <h3>T-bone</h3>
                             <div class="precio">S/ 51.00</div>
                         </div>
-                        <p class="plato-desc">El T-Bone combina dos cortes premium en una 
+                        <p class="plato-desc">El T-Bone combina dos cortes premium en una
                             sola pieza: el lomo fino, tierno y magro, y el bife de chorizo,
-                             firme y sabroso, separados por un hueso en forma de “T”. 
-                             Este hueso actúa como conductor de calor, permitiendo una 
-                             cocción pareja que potencia los sabores. Al asarse, cada lado
-                             desarrolla su propia textura y sabor, ofreciendo una experiencia 
-                             completa con lo mejor de dos mundos en un solo corte.</p>
+                            firme y sabroso, separados por un hueso en forma de “T”.
+                            Este hueso actúa como conductor de calor, permitiendo una
+                            cocción pareja que potencia los sabores. Al asarse, cada lado
+                            desarrolla su propia textura y sabor, ofreciendo una experiencia
+                            completa con lo mejor de dos mundos en un solo corte.</p>
                         <div class="plato-footer">
                             <span class="calorias">400 gramos</span>
                             <div class="rating">
@@ -517,9 +525,252 @@
                         </div>
                     </div>
                 </article>
-
+                <article class="tarjeta-plato carne" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/lomo-fino.jpg" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
+                                    <li>ENSALADA</li>
+                                    <li>SALSAS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Lomo fino </h3>
+                            <div class="precio">S/ 52.00</div>
+                        </div>
+                        <p class="plato-desc">El lomo fino es uno de los cortes más apreciados
+                            por su suavidad y elegancia. Se caracteriza por ser magro, de textura
+                            tierna y jugosa, con muy poca grasa y sin nervios, lo que lo convierte
+                            en una opción ideal para quienes buscan una experiencia refinada al paladar.
+                            Su fibra delicada permite una cocción uniforme, resaltando su sabor natural con solo un
+                            toque de sal y fuego. Perfecto para asados gourmet, el lomo fino ofrece una experiencia de
+                            suavidad inigualable en cada bocado.</p>
+                        <div class="plato-footer">
+                            <span class="calorias">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 25-30 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato carne" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/TOMAHAWK.jpg" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS GRILLADAS Ó PAPAS FRITAS</li>
+                                    <li>ENSALADA</li>
+                                    <li>SALSAS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>TOMAHAWK</h3>
+                            <div class="precio">S/ 66.00</div>
+                        </div>
+                        <p class="plato-desc">El Tomahawk es un corte con hueso, extraído del costillar anterior de la
+                            res, que incluye el ojo del bife junto a una costilla larga limpia. A la parrilla,
+                            desarrolla una costra dorada que sella su abundante marmoleo, concentrando los jugos y
+                            realzando su sabor. Su perfil es intenso, con notas profundas de grasa infiltrada que
+                            aportan carácter sin perder suavidad.
+                            Es ideal para quienes buscan una experiencia robusta, equilibrada y visualmente impactante.
+                            Por su tamaño y cocción lenta, debe solicitarse con al menos 1 hora de anticipación.</p>
+                        <div class="plato-footer">
+                            <span class="calorias">800 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 60 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato especiales " data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/lomo-saltado.png" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS FRITAS</li>
+                                    <li>Arroz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Lomo saltado</h3>
+                            <div class="precio">S/ 34.00</div>
+                        </div>
+                        <p class="plato-desc">Clásico de la cocina peruana preparado con cortes seleccionados de lomo
+                            fino, reconocidos por su suavidad y jugosidad. Salteado al momento en fuego alto con
+                            cebolla, tomate y un toque de sillao, que le da ese sabor ahumado y equilibrado que lo hace
+                            único.
+                            Usamos solo lomo fino real, para que cada bocado sea tierno, sabroso y lleno de tradición.
+                            Acompañado con papas doradas y arroz blanco, es un plato completo que rinde homenaje a lo
+                            mejor de nuestra fusión criolla.
+                            Perfecto para quienes buscan sabor intenso sin perder finura en cada detalle.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias_oculto">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 20-25 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/milanesa-res.jpg" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li> PAPAS FRITAS</li>
+                                    <li>ENSALADA</li>
+                                    <li>ARROZ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Milaneza de res</h3>
+                            <div class="precio">S/ 28.00</div>
+                        </div>
+                        <p class="plato-desc">Clásica y reconfortante, nuestra milanesa está elaborada con cortes
+                            delgados de res seleccionada, empanizados con pan rallado fino y dorados a la perfección.
+                            Crujiente por fuera y jugosa por dentro, cada bocado ofrece el equilibrio ideal entre
+                            textura y sabor.
+                            Acompañada de papas crocantes y ensalada fresca, es una opción generosa, casera y llena de
+                            sabor tradicional.</p>
+                        <div class="plato-footer">
+                            <span class="calorias_OCULTO">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 20-25 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/milaneza-pollo.webp" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS FRITAS</li>
+                                    <li>ENSALADA</li>
+                                    <li>ARROZ</li>
+                                    <li>SALSAS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Milanesa de pollo</h3>
+                            <div class="precio">S/ 32.00</div>
+                        </div>
+                        <p class="plato-desc">Preparada con filetes de pechuga de pollo fresca, suavizados y empanizados
+                            en pan rallado fino para lograr un dorado parejo y una textura crujiente. El interior se
+                            mantiene jugoso gracias a su cocción precisa en aceite limpio y caliente.
+                            Ideal para quienes buscan una opción ligera pero sabrosa, con un equilibrio entre crocancia
+                            y suavidad.
+                            Acompañada con papas doradas y ensalada fresca, es una elección clásica que nunca falla.</p>
+                        <div class="plato-footer">
+                            <span class="calorias_oculto">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/chicharon-de-chancho.jpg" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS DORADAS</li>
+                                    <li>SARSA CRIOLLA CON MENTA</li>
+                                    <li>CHIFLES DE CAMOTE</li>
+                                    <li>CANCHITA</li>
+                                    <li>SALSAS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Chicharron de cerdo</h3>
+                            <div class="precio">S/ 32.00</div>
+                        </div>
+                        <p class="plato-desc">Elaborado con cortes de panceta de cerdo, cocidos en su propia grasa a
+                            fuego lento hasta lograr una piel crocante y carne suave y sabrosa. El proceso asegura un
+                            contraste de texturas único en cada porción.
+                            Acompañado de camote frito, mote o sarza criolla, según preferencia.
+                            Es una explosión de sabor criollo y tradición, ideal para compartir o disfrutar solo.</p>
+                        <div class="plato-footer">
+                            <span class="calorias_oculto">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 25-30 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/corazon-parrilla.webp" alt="Lomo Premium">
+                        <div class="plato-badge">Chef's Selection</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acomopañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>PAPAS GRILLADAS O FRITAS</li>
+                                    <li>ENSALADA</li>
+                                    <li>SALSAS</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>corazon-parrilla</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">Corte marinado de corazón de res, previamente macerado en especias, ajo y
+                            vinagre, luego llevado a la parrilla para un asado rápido que concentra su sabor. Su textura
+                            firme y jugosa, junto al ahumado natural, lo hacen irresistible.
+                            Se sirve en cortes delgados que conservan todo su jugo y sabor intenso.
+                            Es un clásico de la parrilla peruana, perfecto para quienes disfrutan sabores robustos y
+                            auténticos.</p>
+                        <div class="plato-footer">
+                            <span class="calorias_oculto">400 gramos</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 25-30 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 <!-- Repetir estructura para 9 platos más -->
-                
+
             </div>
         </div>
     </section>
@@ -559,7 +810,7 @@
                         <li><a href="#galeria">Galería</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-columna">
                     <h4>Contacto</h4>
                     <div class="info-contacto">
@@ -568,7 +819,7 @@
                         <p><i class="fas fa-envelope"></i> contacto@parrillamartin.com</p>
                     </div>
                 </div>
-                
+
                 <div class="footer-columna">
                     <h4>Horario</h4>
                     <div class="horario">
@@ -582,7 +833,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="derechos">
                 <p>© 2024 La Parrilla de Martín. Todos los derechos reservados.</p>
             </div>
@@ -590,18 +841,8 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-in-out'
-        });
-        
-        // Preloader
-        window.addEventListener('load', () => {
-            document.querySelector('.preloader').classList.add('loaded');
-        });
-    </script>
-   
+
+    <script src="video.js"></script>
 </body>
+
 </html>
