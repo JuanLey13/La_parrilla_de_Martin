@@ -1086,3 +1086,58 @@ body {
     align-items: center;
     gap: 1rem;
 }
+
+/* Añadir al final del archivo */
+
+/* Optimización de barra de navegación en móviles */
+@media (max-width: 767px) {
+    .nav-contenedor {
+        flex-wrap: nowrap;
+    }
+
+    .logo-marca {
+        min-width: auto;
+        overflow: hidden;
+    }
+
+    .marca {
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+    }
+
+    .boton-reserva {
+        padding: 0.5rem;
+        min-width: auto;
+    }
+
+    .texto-reserva {
+        display: none;
+    }
+
+    .icono-reserva {
+        margin: 0;
+    }
+
+    .nav-derecha {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .marca {
+        font-size: 0.7rem;
+        max-width: 80px;
+    }
+
+    .logo {
+        width: 35px;
+    }
+
+    .boton-reserva {
+        padding: 0.4rem;
+        font-size: 0;
+    }
+}
