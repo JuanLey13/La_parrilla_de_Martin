@@ -33,11 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             menuNav.classList.toggle('active');
 
             // Bloquear scroll cuando el menú está abierto
-            if (menuNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            document.body.style.overflow = menuNav.classList.contains('active') ? 'hidden' : '';
         });
     }
 
@@ -48,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hamburguesa && menuNav) {
                 hamburguesa.classList.remove('active');
                 menuNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = '';
             }
         });
     });
@@ -134,4 +130,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Ejecutar periódicamente por si hay elementos que se cargan tarde
     setInterval(fixOverflow, 500);
+
+    // Intentar reproducir el video
+    const video = document.querySelector('.video-fondo');
+    if (video) {
+        video.play().catch(e => {
+            console.log("Autoplay bloqueado:", e);
+            // Mostrar botón de reproducción manual si falla
+            const playButton = document.createElement('button');
+            playButton.innerHTML = '<i class="fas fa-play"></i> Reproducir Video';
+            playButton.style.position = 'absolute';
+            playButton.style.bottom = '20px';
+            playButton.style.left = '50%';
+            playButton.style.transform = 'translateX(-50%)';
+            playButton.style.zIndex = '2';
+            playButton.classList.add('boton-explorar');
+            playButton.addEventListener('click', () => {
+                video.play();
+                playButton.remove();
+            });
+            document.querySelector('.hero').appendChild(playButton);
+        });
+    }
 });

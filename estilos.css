@@ -1,4 +1,9 @@
-/* estilos.css */
+/* Agregar al inicio */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 :root {
     --dorado: #D4AF37;
     --negro: #1A1A1A;
@@ -920,48 +925,6 @@ body {
         padding: 0.8rem 0;
     }
 
-    @media (max-width: 767px) {
-        /* ... (mantén el resto de tu código existente) ... */
-
-        /* ===== MOSTRAR Y OPTIMIZAR VIDEO EN MÓVILES ===== */
-        .video-fondo {
-            display: block;
-            /* Mostrar el video */
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover;
-            transform: translate(-50%, -50%) scale(1.05);
-            /* Pequeño zoom para cubrir bordes */
-        }
-
-        .hero {
-            background: none;
-            /* Eliminar imagen de fondo */
-            overflow: hidden;
-            /* Prevenir desplazamiento horizontal */
-            margin-top: -60px;
-            padding-top: 60px;
-        }
-
-        /* Mejorar contraste para texto */
-        .video-overlay {
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65));
-        }
-
-        /* Ajustar tamaño de texto */
-        .titulo-hero {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .boton-explorar {
-            padding: 0.8rem 1.6rem;
-            font-size: 0.9rem;
-        }
-    }
-
     .titulo-hero {
         font-size: 2rem;
         line-height: 1.2;
@@ -1054,38 +1017,32 @@ body {
     .redes-sociales {
         margin-top: 1.2rem;
     }
-
-    /* Animación de hamburguesa */
-    .hamburguesa.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburguesa.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburguesa.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
 }
 
 /* Optimización para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .video-fondo {
         transform: translate(-50%, -50%) scale(1.1);
-        /* Más zoom para pantallas pequeñas */
     }
 
     .titulo-hero {
         font-size: 1.6rem;
         padding: 0 10px;
-        /* Asegurar que no salga de pantalla */
     }
 
     .subtitulo-hero {
         font-size: 0.85rem;
         padding: 0 15px;
-        /* Asegurar que no salga de pantalla */
+    }
+
+    /* Precios en móviles */
+    .plato-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .precio {
+        margin-top: 5px;
     }
 }
 
@@ -1123,47 +1080,9 @@ body {
     max-width: 100vw;
 }
 
-/* Ajuste para móviles pequeños */
-@media (max-width: 480px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    /* Elementos que podrían causar overflow */
-    .plato-desc,
-    .plato-info,
-    .plato-overlay,
-    .ingredientes-lista,
-    .overlay-contenido {
-        word-break: break-word;
-        overflow-wrap: anywhere;
-    }
-
-    /* Botones de categoría */
-    .boton-categoria {
-        font-size: 0.8rem;
-        padding: 0.5rem 1rem;
-    }
-
-    /* Evitar que las imágenes causen overflow */
-    .plato-imagen img,
-    .marco-dorado img {
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    /* Ajuste especial para el hero */
-    .hero-contenido {
-        padding: 0 10px;
-    }
-
-    /* Forzar a que los precios no hagan overflow */
-    .plato-encabezado {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .precio {
-        margin-top: 5px;
-    }
+/* Alineación para nav-derecha */
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
