@@ -551,6 +551,8 @@ body {
     font-size: 1.1rem;
 }
 
+
+
 .marco-dorado {
     border: 3px solid var(--dorado);
     padding: 0.8rem;
@@ -559,6 +561,8 @@ body {
     overflow: hidden;
     max-width: 100%;
 }
+
+
 
 .marco-dorado::before {
     content: '';
@@ -584,8 +588,8 @@ body {
 
 .marco-dorado img {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     border-radius: 10px;
 }
 
