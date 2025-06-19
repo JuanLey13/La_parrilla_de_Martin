@@ -109,10 +109,6 @@ body {
     gap: 1.5rem;
 }
 
-.menu-nav.active {
-    right: 0;
-}
-
 .nav-link {
     color: var(--blanco);
     text-decoration: none;
@@ -172,16 +168,55 @@ body {
     transition: var(--transicion);
 }
 
-.hamburguesa.active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
+/* Versión móvil - Menú hamburguesa */
+@media (max-width: 768px) {
+    .menu-nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--negro);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: 0.3s;
+        z-index: 999;
+    }
 
-.hamburguesa.active .bar:nth-child(2) {
-    opacity: 0;
-}
+    .menu-nav.active {
+        right: 0;
+    }
 
-.hamburguesa.active .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    .nav-link {
+        padding: 0.8rem;
+        font-size: 1.1rem;
+    }
+
+    .nav-link::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+        width: 80%;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .hamburguesa.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburguesa.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguesa.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 /* Hero Section */
@@ -754,58 +789,6 @@ body {
 
 /* Media Queries para Tabletas */
 @media (min-width: 768px) {
-    .nav-contenedor {
-        padding: 1rem 5%;
-    }
-
-    .menu-nav {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--negro);
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 0;
-        transition: 0.3s;
-        z-index: 999;
-    }
-
-    .menu-nav.active {
-        right: 0;
-    }
-
-    .nav-link {
-        padding: 0.8rem;
-        font-size: 1.1rem;
-    }
-
-    .nav-link::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .nav-link:hover::after {
-        width: 80%;
-    }
-
-    .hamburguesa {
-        display: block;
-    }
-
-    .hamburguesa.active .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburguesa.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburguesa.active .bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-
     .titulo-hero {
         font-size: 3rem;
     }
