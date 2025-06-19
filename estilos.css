@@ -871,33 +871,206 @@ body {
     }
 }
 
-/* Ajustes específicos para móviles pequeños */
-@media (max-width: 480px) {
-    .logo {
-        width: 45px;
+/* ======== AJUSTES ESPECÍFICOS PARA MÓVIL ======== */
+@media (max-width: 767px) {
+
+    /* Prevenir desplazamiento horizontal */
+    body {
+        overflow-x: hidden;
     }
 
-    .marca {
-        font-size: 1rem;
+    /* Navegación móvil */
+    .nav-contenedor {
+        padding: 0.8rem 5%;
+        flex-wrap: wrap;
     }
 
-    .boton-reserva {
-        padding: 0.6rem 1.2rem;
+    .logo-marca {
+        flex: 1;
+    }
+
+    .nav-derecha {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .menu-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--negro);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 2rem;
+        transition: 0.5s;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-nav.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.8rem 0;
+    }
+
+    /* Hero - Ocultar video en móvil */
+    .video-fondo {
+        display: none;
+    }
+
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero-mobile.jpg') center/cover no-repeat;
+        margin-top: -60px;
+        padding-top: 60px;
     }
 
     .titulo-hero {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .subtitulo-hero {
+        font-size: 0.9rem;
     }
 
     .boton-explorar {
         padding: 0.9rem 1.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Menú de categorías */
+    .categorias-menu {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        white-space: nowrap;
+    }
+
+    .categorias-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .boton-categoria {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    /* Tarjetas de plato */
+    .grid-menu {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .plato-imagen {
+        height: 280px;
+    }
+
+    .plato-info {
+        padding: 1.2rem;
+    }
+
+    .plato-desc {
+        font-size: 0.85rem;
+    }
+
+    /* Sección experiencia */
+    .seccion-experiencia {
+        padding: 3rem 0;
+    }
+
+    .grid-experiencia {
+        gap: 2rem;
+    }
+
+    .experiencia-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .marco-dorado img {
         height: 300px;
     }
 
-    .categorias-menu {
-        justify-content: flex-start;
+    /* Footer */
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .grid-footer {
+        gap: 2rem;
+    }
+
+    .footer-columna h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-contacto p,
+    .horario p,
+    .menu-footer a {
+        font-size: 0.9rem;
+    }
+
+    .redes-sociales {
+        margin-top: 1.2rem;
+    }
+
+    /* Animación de hamburguesa */
+    .hamburguesa.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburguesa.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguesa.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .logo {
+        width: 40px;
+    }
+
+    .marca {
+        font-size: 0.9rem;
+    }
+
+    .boton-reserva {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .titulo-hero {
+        font-size: 1.8rem;
+    }
+
+    .plato-imagen {
+        height: 220px;
+    }
+
+    .plato-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+    }
+
+    .plato-encabezado h3 {
+        font-size: 1.1rem;
+    }
+
+    .precio {
+        font-size: 1rem;
     }
 }
