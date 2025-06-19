@@ -22,54 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Ejecutar inmediatamente
     fixOverflow();
-    // Función para forzar la reproducción del video en móviles
-    function forceVideoPlay() {
-        const video = document.querySelector('.video-fondo');
 
-        if (video && window.innerWidth < 768) {
-            // Reiniciar video
-            video.currentTime = 0;
-            video.load();
-
-            // Intentar reproducir
-            const playPromise = video.play();
-
-            if (playPromise !== undefined) {
-                playPromise
-                    .then(() => {
-                        console.log("Video reproduciéndose");
-                        video.classList.add('playing');
-                    })
-                    .catch(error => {
-                        console.log("Error reproduciendo video:", error);
-                        // Mostrar fallback si hay error
-                        const fallback = document.querySelector('.video-fallback');
-                        if (fallback) {
-                            fallback.style.display = 'block';
-                            video.style.display = 'none';
-                        }
-                    });
-            }
-        }
-    }
-
-    // Ejecutar cuando el contenido esté cargado
-    document.addEventListener('DOMContentLoaded', function () {
-        forceVideoPlay();
-
-        // Volver a intentar después de 1 segundo
-        setTimeout(forceVideoPlay, 1000);
-
-        // Intentar cuando el usuario interactúe
-        document.body.addEventListener('click', function () {
-            if (!document.querySelector('.video-fondo.playing')) {
-                forceVideoPlay();
-            }
-        });
-    });
-
-    // También intentar cuando cambie la orientación del dispositivo
-    window.addEventListener('orientationchange', forceVideoPlay);
     // Menú hamburguesa
     const hamburguesa = document.querySelector('.hamburguesa');
     const menuNav = document.querySelector('.menu-nav');
