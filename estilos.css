@@ -1088,3 +1088,82 @@ body {
         /* Asegurar que no salga de pantalla */
     }
 }
+
+/* ========================================== */
+/* CORRECCIONES URGENTES PARA OVERFLOW MOBILE */
+/* ========================================== */
+
+/* Solución global para desplazamiento horizontal */
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Contenedores principales */
+.contenedor,
+.nav-contenedor {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Fuerza a los elementos a mantenerse dentro de pantalla */
+.grid-menu,
+.grid-experiencia,
+.grid-footer,
+.plato-imagen,
+.hero-contenido {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Corrección específica para preloader */
+.preloader {
+    max-width: 100vw;
+}
+
+/* Ajuste para móviles pequeños */
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Elementos que podrían causar overflow */
+    .plato-desc,
+    .plato-info,
+    .plato-overlay,
+    .ingredientes-lista,
+    .overlay-contenido {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    /* Botones de categoría */
+    .boton-categoria {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Evitar que las imágenes causen overflow */
+    .plato-imagen img,
+    .marco-dorado img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Ajuste especial para el hero */
+    .hero-contenido {
+        padding: 0 10px;
+    }
+
+    /* Forzar a que los precios no hagan overflow */
+    .plato-encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .precio {
+        margin-top: 5px;
+    }
+}
