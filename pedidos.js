@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
             mensaje += `Mozo: ${document.getElementById('mozo-mesa').value}\n`;
         }
 
-        const telefonoAdmin = '519'; // reemplaza con el tuyo
+        const telefonoAdmin = '51903288099'; // reemplaza con el tuyo
         const url = `https://wa.me/${telefonoAdmin}?text=${encodeURIComponent(mensaje)}`;
         window.open(url, '_blank');
 
