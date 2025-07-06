@@ -1,4 +1,4 @@
-<!-- pedidos.html -->
+<!-- reservas.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -53,6 +53,11 @@
                 <i class="fas fa-store"></i>
                 <h3>Recojo en Tienda</h3>
                 <p>Recoja su pedido en nuestro local</p>
+            </div>
+            <div class="opcion" data-tipo="mesa">
+                <i class="fas fa-utensils"></i>
+                <h3>Mesa</h3>
+                <p>Realizar pedido en el local</p>
             </div>
         </div>
 
@@ -151,6 +156,31 @@
             </div>
         </div>
 
+        <!-- Formulario de Mesa -->
+        <div class="formulario-pedido" id="form-mesa">
+            <h2><i class="fas fa-utensils"></i> Información de Mesa</h2>
+
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Número de Mesa *</label>
+                    <select id="mesa-numero" required>
+                        <option value="">Seleccionar mesa</option>
+                        <!-- Las opciones se generarán con JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mozo *</label>
+                    <select id="mozo-mesa" required>
+                        <option value="">Seleccionar mozo</option>
+                        <option value="Juan Perez">Juan Perez</option>
+                        <option value="Maria Garcia">Maria Garcia</option>
+                        <option value="Carlos Lopez">Carlos Lopez</option>
+                        <option value="Ana Martinez">Ana Martinez</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <!-- Selección de Platos -->
         <div class="seleccion-platos">
             <h2><i class="fas fa-utensils"></i> Seleccione sus Platos</h2>
@@ -179,6 +209,7 @@
                                 <th>Cantidad</th>
                                 <th>Precio</th>
                                 <th>Subtotal</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody id="items-pedido">
@@ -203,7 +234,7 @@
                 </div>
             </div>
 
-            <div class="metodos-pago">
+            <!--<div class="metodos-pago">
                 <h3>Método de Pago</h3>
                 <div class="opciones-pago">
                     <div class="opcion-pago">
@@ -226,11 +257,43 @@
                     <img src="img/qr-yape.jpg" alt="Código QR Yape">
                     <p>Escanee el código para pagar con Yape</p>
                 </div>
-            </div>
+            </div>-->
 
             <button class="btn-confirmar">Confirmar Pedido</button>
         </div>
     </main>
+
+    <!-- Modal para opciones de carne -->
+    <div class="modal-opciones" id="modal-opciones">
+        <div class="modal-contenido">
+            <button class="modal-cerrar">&times;</button>
+            <h2 id="modal-titulo">Opciones para <span id="modal-nombre-plato"></span></h2>
+            <div class="form-group">
+                <label>Término de cocción *</label>
+                <select id="modal-termino" required>
+                    <option value="">Seleccionar término</option>
+                    <option value="medio">Medio</option>
+                    <option value="3/4">3/4</option>
+                    <option value="bien cocido">Bien cocido</option>
+                    <option value="azul">Azul</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Acompañamiento *</label>
+                <select id="modal-acompanamiento" required>
+                    <option value="">Seleccionar acompañamiento</option>
+                    <option value="papas fritas">Papas fritas</option>
+                    <option value="papas grilladas">Papas grilladas</option>
+                    <option value="papas fritas y arroz">Papas fritas y arroz</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Notas adicionales</label>
+                <textarea id="modal-notas" placeholder="Ej: Sin sal, bien dorado, etc."></textarea>
+            </div>
+            <button class="btn-confirmar" id="modal-agregar">Agregar al pedido</button>
+        </div>
+    </div>
 
     <script src="pedidos.js"></script>
 </body>

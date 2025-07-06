@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Corte tradicional de costillas con hueso, cocinado lentamente a la parrilla",
             precio: 37.00,
             categoria: "carne",
-            imagen: "img/ASADO.jpg"
+            imagen: "img/ASADO.jpg",
+            esCarne: true
         },
         {
             id: 2,
@@ -21,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Corte triangular con capa de grasa natural, jugoso y de sabor intenso",
             precio: 42.00,
             categoria: "carne",
-            imagen: "img/Picaña.png"
+            imagen: "img/Picaña.png",
+            esCarne: true
         },
         {
             id: 3,
@@ -29,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Corte de lomo corto con equilibrio perfecto entre músculo y grasa",
             precio: 41.00,
             categoria: "carne",
-            imagen: "img/Bife-angosto-Arg.jpg"
+            imagen: "img/Bife-angosto-Arg.jpg",
+            esCarne: true
         },
         {
             id: 4,
@@ -37,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Pierna de cordero cocinada lentamente, jugosa y de sabor profundo",
             precio: 37.00,
             categoria: "cordero",
-            imagen: "img/cordero-piernaa.jpg"
+            imagen: "img/cordero-piernaa.jpg",
+            esCarne: false
         },
         {
             id: 5,
@@ -45,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Costilla de cordero con hueso, sabrosa y jugosa",
             precio: 37.00,
             categoria: "cordero",
-            imagen: "img/cordero-costilla.jpeg"
+            imagen: "img/cordero-costilla.jpeg",
+            esCarne: false
         },
         {
             id: 6,
@@ -53,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Clásico peruano con lomo fino salteado con cebolla, tomate y sillao",
             precio: 34.00,
             categoria: "especiales",
-            imagen: "img/lomo-saltado.png"
+            imagen: "img/lomo-saltado.png",
+            esCarne: true
         },
         {
             id: 7,
@@ -61,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Panceta de cerdo cocida en su grasa con piel crocante y carne suave",
             precio: 32.00,
             categoria: "especiales",
-            imagen: "img/chicharon-de-chancho.jpg"
+            imagen: "img/chicharon-de-chancho.jpg",
+            esCarne: true
         },
         {
             id: 8,
@@ -69,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: "Corazón de res marinado y asado a la parrilla, textura firme y jugosa",
             precio: 25.00,
             categoria: "especiales",
-            imagen: "img/corazon-parrilla.webp"
+            imagen: "img/corazon-parrilla.webp",
+            esCarne: true
         }
     ];
 
@@ -81,6 +89,18 @@ document.addEventListener('DOMContentLoaded', function () {
         subtotal: 0,
         total: 0
     };
+    let platoActual = null;
+
+    // Generar opciones de mesa (1-24)
+    const mesaSelect = document.getElementById('mesa-numero');
+    if (mesaSelect) {
+        for (let i = 1; i <= 24; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `Mesa ${i}`;
+            mesaSelect.appendChild(option);
+        }
+    }
 
     // Cambiar tipo de pedido
     const opcionesPedido = document.querySelectorAll('.opcion');
@@ -157,8 +177,8 @@ document.addEventListener('DOMContentLoaded', function () {
             platoItem.dataset.id = plato.id;
 
             // Verificar si el plato ya está en el pedido
-            const itemPedido = pedido.items.find(item => item.id === plato.id);
-            const cantidad = itemPedido ? itemPedido.cantidad : 0;
+            const itemsPlato = pedido.items.filter(item => item.id === plato.id);
+            const cantidad = itemsPlato.length;
 
             platoItem.innerHTML = `
                 <div class="plato-imagen">
@@ -185,43 +205,51 @@ document.addEventListener('DOMContentLoaded', function () {
             const incrementar = platoItem.querySelector('.incrementar');
             const contadorValor = platoItem.querySelector('.contador-valor');
 
-            decrementar.addEventListener('click', () => actualizarCantidad(plato.id, -1));
-            incrementar.addEventListener('click', () => actualizarCantidad(plato.id, 1));
+            decrementar.addEventListener('click', () => eliminarPlato(plato.id));
+            incrementar.addEventListener('click', () => agregarPlato(plato));
         });
     }
 
-    // Actualizar cantidad de un plato
-    function actualizarCantidad(platoId, cambio) {
-        const plato = platos.find(p => p.id === platoId);
-        const itemIndex = pedido.items.findIndex(item => item.id === platoId);
+    // Abrir modal para agregar plato de carne con opciones
+    function agregarPlato(plato) {
+        platoActual = plato;
 
-        if (itemIndex > -1) {
-            // Actualizar cantidad existente
-            pedido.items[itemIndex].cantidad += cambio;
-
-            // Eliminar si la cantidad llega a 0
-            if (pedido.items[itemIndex].cantidad <= 0) {
-                pedido.items.splice(itemIndex, 1);
-            }
-        } else if (cambio > 0) {
-            // Agregar nuevo item
-            pedido.items.push({
-                id: plato.id,
-                nombre: plato.nombre,
-                precio: plato.precio,
-                cantidad: 1
-            });
+        // Si es un plato de carne, abrir modal para seleccionar opciones
+        if (plato.esCarne) {
+            document.getElementById('modal-nombre-plato').textContent = plato.nombre;
+            document.getElementById('modal-termino').value = '';
+            document.getElementById('modal-acompanamiento').value = '';
+            document.getElementById('modal-notas').value = '';
+            document.getElementById('modal-opciones').classList.add('activo');
+        } else {
+            // Para platos no carne, agregar directamente sin opciones
+            agregarItemPedido(plato.id, plato.nombre, plato.precio, 'no-carne');
         }
+    }
 
-        // Actualizar contador en la lista de platos
-        const contadorValor = document.querySelector(`.plato-item[data-id="${platoId}"] .contador-valor`);
-        if (contadorValor) {
-            const item = pedido.items.find(item => item.id === platoId);
-            contadorValor.textContent = item ? item.cantidad : '0';
-        }
+    // Agregar ítem al pedido con opciones
+    function agregarItemPedido(id, nombre, precio, tipo, opciones = {}) {
+        const nuevoItem = {
+            id: id,
+            nombre: nombre,
+            precio: precio,
+            tipo: tipo,
+            opciones: opciones
+        };
 
-        // Actualizar resumen
+        pedido.items.push(nuevoItem);
         actualizarResumen();
+        cargarPlatos();
+    }
+
+    // Eliminar un plato (último del mismo tipo)
+    function eliminarPlato(platoId) {
+        const itemIndex = pedido.items.findIndex(item => item.id === platoId);
+        if (itemIndex > -1) {
+            pedido.items.splice(itemIndex, 1);
+            actualizarResumen();
+            cargarPlatos();
+        }
     }
 
     // Actualizar resumen del pedido
@@ -231,17 +259,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         pedido.subtotal = 0;
 
-        pedido.items.forEach(item => {
-            const subtotal = item.precio * item.cantidad;
-            pedido.subtotal += subtotal;
+        pedido.items.forEach((item, index) => {
+            pedido.subtotal += item.precio;
+
+            let opcionesHTML = '';
+            if (item.tipo === 'carne') {
+                opcionesHTML = `<div><small>Término: ${item.opciones.termino || '-'}</small></div>
+                                <div><small>Acompañamiento: ${item.opciones.acompanamiento || '-'}</small></div>`;
+                if (item.opciones.notas) {
+                    opcionesHTML += `<div><small>Notas: ${item.opciones.notas}</small></div>`;
+                }
+            }
 
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td>${item.nombre}</td>
-                <td>${item.cantidad}</td>
+                <td>${item.nombre}${opcionesHTML ? '<br>' + opcionesHTML : ''}</td>
+                <td>1</td>
                 <td>S/ ${item.precio.toFixed(2)}</td>
-                <td>S/ ${subtotal.toFixed(2)}</td>
-                <td class="eliminar-item" data-id="${item.id}"><i class="fas fa-trash"></i></td>
+                <td>S/ ${item.precio.toFixed(2)}</td>
+                <td class="eliminar-item" data-index="${index}"><i class="fas fa-trash"></i></td>
             `;
             tbody.appendChild(tr);
         });
@@ -252,8 +288,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Agregar event listeners a los botones de eliminar
         document.querySelectorAll('.eliminar-item').forEach(btn => {
             btn.addEventListener('click', function () {
-                const id = parseInt(this.dataset.id);
-                actualizarCantidad(id, -pedido.items.find(item => item.id === id).cantidad);
+                const index = parseInt(this.dataset.index);
+                pedido.items.splice(index, 1);
+                actualizarResumen();
+                cargarPlatos();
             });
         });
     }
@@ -318,6 +356,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 !document.getElementById('hora-recojo').value) {
                 formularioValido = false;
             }
+        } else if (pedido.tipo === 'mesa') {
+            if (!document.getElementById('mesa-numero').value ||
+                !document.getElementById('mozo-mesa').value) {
+                formularioValido = false;
+            }
         }
 
         // Validar que haya platos seleccionados
@@ -332,53 +375,90 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Aquí normalmente enviarías los datos al servidor
-        fetch('guardar-pedido.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(pedido)
-        })
-            .then(response => response.text())
-            .then(data => {
-                alert(data); // Mensaje del servidor (PHP)
-                // Limpieza visual si todo salió bien
-                document.querySelectorAll('input, select, textarea').forEach(el => {
-                    if (el.type !== 'radio' && el.type !== 'checkbox') {
-                        el.value = '';
-                    }
-                });
-                pedido = {
-                    tipo: "reservacion",
-                    items: [],
-                    costoDelivery: 0,
-                    subtotal: 0,
-                    total: 0
-                };
-                actualizarResumen();
-                cargarPlatos();
-            })
-            .catch(error => {
-                alert('❌ Error al enviar el pedido.');
-                console.error(error);
-            });
+        // Crear el mensaje para WhatsApp
+        let mensaje = `=== NUEVO PEDIDO - ${pedido.tipo.toUpperCase()} ===\n\n`;
 
-
-        // Resetear formulario
-        document.querySelectorAll('input, select, textarea').forEach(el => {
-            if (el.type !== 'radio' && el.type !== 'checkbox') {
-                el.value = '';
+        pedido.items.forEach((item, index) => {
+            mensaje += `${index + 1}. ${item.nombre} - S/ ${item.precio.toFixed(2)}\n`;
+            if (item.tipo === 'carne') {
+                mensaje += `  > Término: ${item.opciones.termino}\n`;
+                mensaje += `  > Acompañamiento: ${item.opciones.acompanamiento}\n`;
+                if (item.opciones.notas) {
+                    mensaje += `  > Notas: ${item.opciones.notas}\n`;
+                }
             }
+            mensaje += `\n`;
         });
-        pedido = {
-            tipo: "reservacion",
-            items: [],
-            costoDelivery: 0,
-            subtotal: 0,
-            total: 0
-        };
-        actualizarResumen();
-        cargarPlatos();
+
+        mensaje += `Subtotal: S/ ${pedido.subtotal.toFixed(2)}\n`;
+        if (pedido.tipo === 'delivery') {
+            mensaje += `Delivery: S/ ${pedido.costoDelivery.toFixed(2)}\n`;
+        }
+        mensaje += `TOTAL: S/ ${pedido.total.toFixed(2)}\n\n`;
+
+        if (pedido.tipo === 'reservacion') {
+            mensaje += `Nombre: ${document.getElementById('nombre-reserva').value}\n`;
+            mensaje += `Celular: ${document.getElementById('celular-reserva').value}\n`;
+            mensaje += `Fecha: ${document.getElementById('fecha-reserva').value}\n`;
+            mensaje += `Hora: ${document.getElementById('hora-reserva').value}\n`;
+            mensaje += `Personas: ${document.getElementById('personas-reserva').value}\n`;
+        } else if (pedido.tipo === 'delivery') {
+            mensaje += `Nombre: ${document.getElementById('nombre-delivery').value}\n`;
+            mensaje += `Celular: ${document.getElementById('celular-delivery').value}\n`;
+            mensaje += `Dirección: ${document.getElementById('direccion-delivery').value}\n`;
+            mensaje += `Distrito: ${document.getElementById('distrito-delivery').value}\n`;
+            mensaje += `Referencia: ${document.getElementById('referencia-delivery').value}\n`;
+        } else if (pedido.tipo === 'recojo') {
+            mensaje += `Nombre: ${document.getElementById('nombre-recojo').value}\n`;
+            mensaje += `Celular: ${document.getElementById('celular-recojo').value}\n`;
+            mensaje += `Hora de Recojo: ${document.getElementById('hora-recojo').value}\n`;
+        } else if (pedido.tipo === 'mesa') {
+            mensaje += `Mesa: ${document.getElementById('mesa-numero').value}\n`;
+            mensaje += `Mozo: ${document.getElementById('mozo-mesa').value}\n`;
+        }
+
+        const telefonoAdmin = '519'; // reemplaza con el tuyo
+        const url = `https://wa.me/${telefonoAdmin}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+
+    });
+
+    // Manejar modal de opciones
+    document.getElementById('modal-agregar').addEventListener('click', function () {
+        const termino = document.getElementById('modal-termino').value;
+        const acompanamiento = document.getElementById('modal-acompanamiento').value;
+        const notas = document.getElementById('modal-notas').value;
+
+        if (!termino || !acompanamiento) {
+            alert('Por favor seleccione el término y el acompañamiento');
+            return;
+        }
+
+        agregarItemPedido(
+            platoActual.id,
+            platoActual.nombre,
+            platoActual.precio,
+            'carne',
+            {
+                termino: termino,
+                acompanamiento: acompanamiento,
+                notas: notas
+            }
+        );
+
+        document.getElementById('modal-opciones').classList.remove('activo');
+    });
+
+    // Cerrar modal
+    document.querySelector('.modal-cerrar').addEventListener('click', function () {
+        document.getElementById('modal-opciones').classList.remove('activo');
+    });
+
+    // Cerrar modal al hacer clic fuera del contenido
+    document.getElementById('modal-opciones').addEventListener('click', function (e) {
+        if (e.target === this) {
+            this.classList.remove('activo');
+        }
     });
 
     // Inicializar

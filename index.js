@@ -1,4 +1,3 @@
-// SOLUCIÓN DEFINITIVA PARA OVERFLOW HORIZONTAL
 document.addEventListener('DOMContentLoaded', function () {
     // Función para corregir overflow
     function fixOverflow() {
@@ -49,13 +48,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Categorías del menú
+    // Categorías del menú - MODIFICADO: Eliminada la categoría "Todos"
     const botonesCategorias = document.querySelectorAll('.boton-categoria');
     const platos = document.querySelectorAll('.tarjeta-plato');
 
     if (botonesCategorias.length > 0) {
-        // Mostrar todos los platos inicialmente
-        platos.forEach(plato => plato.classList.add('activo'));
+        // Activar la primera categoría por defecto (Cortes especiales)
+        botonesCategorias[0].classList.add('activo');
+        const primeraCategoria = botonesCategorias[0].dataset.categoria;
+
+        // Ocultar todos los platos inicialmente
+        platos.forEach(plato => plato.classList.remove('activo'));
+
+        // Mostrar solo los de la primera categoría
+        const platosPrimeraCategoria = document.querySelectorAll(`.tarjeta-plato.${primeraCategoria}`);
+        platosPrimeraCategoria.forEach(plato => plato.classList.add('activo'));
 
         botonesCategorias.forEach(boton => {
             boton.addEventListener('click', () => {
@@ -72,12 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
                 // Mostrar solo los de la categoría seleccionada
-                if (categoria === 'todos') {
-                    platos.forEach(plato => plato.classList.add('activo'));
-                } else {
-                    const platosCategoria = document.querySelectorAll(`.tarjeta-plato.${categoria}`);
-                    platosCategoria.forEach(plato => plato.classList.add('activo'));
-                }
+                const platosCategoria = document.querySelectorAll(`.tarjeta-plato.${categoria}`);
+                platosCategoria.forEach(plato => plato.classList.add('activo'));
 
                 // Corregir overflow después de filtrar
                 setTimeout(fixOverflow, 50);
@@ -112,7 +115,18 @@ document.addEventListener('DOMContentLoaded', function () {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+
+            if (href === '#' || href.length < 2) {
+                // Scroll al inicio si href es "#"
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+
+            const target = document.querySelector(href);
             if (target) {
                 window.scrollTo({
                     top: target.offsetTop - 80,
@@ -152,4 +166,64 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.hero').appendChild(playButton);
         });
     }
+
+    // Funcionalidad para llamar al mozo - NUEVO
+    const botonMozo = document.getElementById('llamar-mozo');
+    if (botonMozo) {
+        botonMozo.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Crear notificación
+            const notificacion = document.createElement('div');
+            notificacion.textContent = '🛎️ Un mozo se dirigirá a su mesa en breve';
+            notificacion.style.position = 'fixed';
+            notificacion.style.bottom = '20px';
+            notificacion.style.left = '50%';
+            notificacion.style.transform = 'translateX(-50%)';
+            notificacion.style.backgroundColor = '#4CAF50'; // Verde
+            notificacion.style.color = 'white';
+            notificacion.style.padding = '15px 25px';
+            notificacion.style.borderRadius = '30px';
+            notificacion.style.zIndex = '10000';
+            notificacion.style.fontWeight = '600';
+            notificacion.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+            notificacion.style.animation = 'fadeInUp 0.5s forwards';
+
+            document.body.appendChild(notificacion);
+
+            // Animación para desaparecer
+            setTimeout(() => {
+                notificacion.style.animation = 'fadeOutDown 0.5s forwards';
+                setTimeout(() => {
+                    notificacion.remove();
+                }, 500);
+            }, 3000);
+        });
+    }
+
+    // Agregar animaciones CSS para la notificación
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+        @keyframes fadeOutDown {
+            from {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+            to {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+        }
+    `;
+    document.head.appendChild(style);
 });

@@ -1,4 +1,3 @@
-2
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,9 +37,15 @@
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
 
+            <!-- Actualizar los botones en la barra de navegación -->
             <div class="nav-derecha">
+                <a href="#" class="boton-mozos" id="llamar-mozo">
+                    <i class="fas fa-bell"></i>
+                    <span class="texto-boton">Cocina</span>
+                </a>
                 <a href="reservas.html" class="boton-reserva">
-                    Realizar pedido <i class="fas fa-chevron-right"></i>
+                    <span class="texto-boton">Realizar pedido</span>
+                    <i class="fas fa-chevron-right"></i>
                 </a>
                 <div class="hamburguesa">
                     <span class="bar"></span>
@@ -89,15 +94,25 @@
                 <p class="subtitulo-seccion">10 creaciones magistrales de nuestro chef</p>
             </div>
             <div class="categorias-menu">
-                <button class="boton-categoria activo" data-categoria="todos">Todos</button>
-                <button class="boton-categoria" data-categoria="carne">Cortes especiales</button>
+                <button class="boton-categoria" data-categoria="especiales">Cortes especiales</button>
                 <button class="boton-categoria" data-categoria="cordero">Cordero</button>
-                <button class="boton-categoria" data-categoria="especiales">Criollos</button>
+                <button class="boton-categoria" data-categoria="criollos">Criollos</button>
+                <button class="boton-categoria" data-categoria="compartir">Parrillas para Compartir</button>
+                <button class="boton-categoria" data-categoria="alitas">Alitas</button>
+                <button class="boton-categoria" data-categoria="salchipapas">Salchipapas</button>
+                <button class="boton-categoria" data-categoria="guarniciones">Guarniciones</button>
+                <button class="boton-categoria" data-categoria="bebidas">Bebidas</button>
+                <button class="boton-categoria" data-categoria="vinos">Vinos</button>
+                <button class="boton-categoria" data-categoria="cocteles">Cocteles</button>
+                <button class="boton-categoria" data-categoria="sangrias">Sangrías</button>
+                <button class="boton-categoria" data-categoria="whiskies">Whiskies</button>
+                <button class="boton-categoria" data-categoria="cervezas">Cervezas</button>
+
             </div>
 
             <div class="grid-menu">
                 <!-- Plato 1 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/ASADO.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -132,7 +147,7 @@
                     </div>
                 </article>
                 <!-- Plato 2 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/Picaña.png" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -168,7 +183,7 @@
                     </div>
                 </article>
                 <!-- Plato 3 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/Bife-angosto-Arg.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -204,7 +219,7 @@
                     </div>
                 </article>
                 <!-- Plato 4 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/bife-ancho.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -238,7 +253,7 @@
                     </div>
                 </article>
                 <!-- Plato 5 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/rib-eye.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -273,7 +288,7 @@
                     </div>
                 </article>
                 <!-- Plato 6 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/cuadril.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -309,7 +324,7 @@
                     </div>
                 </article>
                 <!-- Plato 7 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/portehouse.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -455,7 +470,7 @@
                     </div>
                 </article>
                 <!-- Plato 9 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/entraña-fina.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -493,7 +508,7 @@
                     </div>
                 </article>
                 <!-- Plato 9 -->
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/T-bone.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -528,7 +543,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/lomo-fino.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -563,7 +578,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato carne" data-aos="flip-left">
+                <article class="tarjeta-plato especiales" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/TOMAHAWK.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -598,7 +613,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato especiales " data-aos="flip-left">
+                <article class="tarjeta-plato criollos " data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/lomo-saltado.png" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -634,7 +649,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                <article class="tarjeta-plato criollos" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/milanesa-res.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -668,7 +683,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                <article class="tarjeta-plato criollos" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/milaneza-pollo.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -703,7 +718,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                <article class="tarjeta-plato criollos" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/chicharon-de-chancho.jpg" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -738,7 +753,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="tarjeta-plato especiales" data-aos="flip-left">
+                <article class="tarjeta-plato criollos" data-aos="flip-left">
                     <div class="plato-imagen">
                         <img src="img/corazon-parrilla.webp" alt="Lomo Premium">
                         <div class="plato-badge">Chef's Selection</div>
@@ -773,6 +788,1537 @@
                     </div>
                 </article>
                 <!-- Repetir estructura para 9 platos más -->
+                <article class="tarjeta-plato compartir" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/parrilla-personal.jpg" alt="Parrilla Personal">
+                        <div class="plato-badge">Individual</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>1 Parrilla de Pollo</li>
+                                    <li>1 Parrilla de Cerdo</li>
+                                    <li>2 Mitades de chorizo</li>
+                                    <li>2 Salchichas arequipeñas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Parrilla Personal (Pollo y Cerdo)</h3>
+                            <div class="precio">S/ 55.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Una opción completa para una persona con lo mejor de la parrilla. Acompañado con ensalada y
+                            guarnición a elección: papas fritas, papas grilladas o arroz.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">500-600g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 20-25 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato compartir" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/parrilla-doble.jpg" alt="Parrilla Doble">
+                        <div class="plato-badge">Ideal para 2</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>2 Parrillas a elección</li>
+                                    <li>4 Mitades de chorizo</li>
+                                    <li>4 Salchichas arequipeñas</li>
+                                    <li>Guarniciones y ensalada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Parrilla Doble (a elección)</h3>
+                            <div class="precio">S/ 57.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Perfecta para compartir entre dos. Puedes elegir entre Pollo + Res, Cerdo + Res o Pollo +
+                            Cerdo. Se acompaña con ensalada fresca y guarnición a elección.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">800g aprox.</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 30 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tarjeta-plato compartir" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/parrilla-triple.jpg" alt="Parrilla Triple">
+                        <div class="plato-badge">Ideal para grupos</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Acompañado con: </h3>
+                                <ul class="ingredientes-lista">
+                                    <li>ENSALADA</li>
+                                    <li>Papas fritas o grilladas</li>
+                                    <li>Arroz (opcional)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Parrilla Triple (Pollo, Cerdo y Res)</h3>
+                            <div class="precio">S/ 85.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Ideal para 3 a 4 personas. Incluye 1 parrilla de pollo, 1 de cerdo, 1 de res, 3 mitades de
+                            chorizo y 3 salchichas arequipeñas. Una experiencia completa para compartir en grupo.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">Aprox. 1.2 kg</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 30-40 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-limon.jpg" alt="Alitas al Limón">
+                        <div class="plato-badge">Fresco y cítrico</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas al Limón</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Alitas jugosas bañadas en salsa de limón natural, con un toque de especias. Crujientes por
+                            fuera y tiernas por dentro. Una opción fresca y ligera.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-picantes.jpg" alt="Alitas Picantes">
+                        <div class="plato-badge">¡Explosivas!</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas Picantes</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Preparadas con salsa especial de ají y especias ahumadas, estas alitas son ideales para los
+                            amantes del picante. El balance perfecto entre sabor y fuego.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-bbq.jpg" alt="Alitas BBQ">
+                        <div class="plato-badge">Clásicas y dulzonas</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas BBQ</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Bañadas en una deliciosa salsa barbacoa, dulce y ahumada. Perfectas para disfrutar sin
+                            apuro, con textura crujiente y un corazón jugoso.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-maracuya.jpg" alt="Alitas Maracuyá">
+                        <div class="plato-badge">Exóticas</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas Maracuyá</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Una combinación inesperada: alitas crujientes bañadas en salsa de maracuyá dulce y ácida.
+                            Refrescantes, sabrosas y diferentes.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-broaster.jpg" alt="Alitas Broaster">
+                        <div class="plato-badge">Tradicionales</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas Broaster</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Crujientes y doradas al estilo clásico broaster. Marinado especial y rebozado crocante. Una
+                            opción irresistible para quienes disfrutan de lo tradicional.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-fritas.jpg" alt="Alitas Fritas">
+                        <div class="plato-badge">Sin salsa</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas opcionales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas Fritas</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Alitas doradas sin salsas añadidas, para quienes disfrutan del sabor puro del pollo.
+                            Crujientes, jugosas y listas para acompañar con tu salsa favorita.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato alitas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/alitas-acevichadas.jpg" alt="Alitas Acevichadas">
+                        <div class="plato-badge">Sabor peruano</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Ensalada</li>
+                                    <li>Salsas acevichadas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Alitas Acevichadas</h3>
+                            <div class="precio">S/ 25.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Alitas bañadas en salsa estilo ceviche: ácida, fresca y especiada. Fusión creativa para
+                            quienes buscan una explosión de sabor peruano en cada bocado.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">6 piezas</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato salchipapas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/salchipapa-clasica.jpg" alt="Salchipapa Clásica">
+                        <div class="plato-badge">La de siempre</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Contiene:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Salchicha Frankfurt</li>
+                                    <li>Hot dog</li>
+                                    <li>Salsas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Salchipapa Clásica</h3>
+                            <div class="precio">S/ 13.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Nuestra versión tradicional, perfecta para un antojo rápido. Mezcla de papas crujientes con
+                            salchichas y hot dog al estilo callejero peruano.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">400 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 10-15 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato salchipapas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/salchibroster.jpg" alt="Salchibroster">
+                        <div class="plato-badge">Kids</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Contiene:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Salchicha Frankfurt</li>
+                                    <li>Hot dog</li>
+                                    <li>Trocitos de pollo broaster</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Salchibroster</h3>
+                            <div class="precio">S/ 16.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Ideal para niños (o grandes con corazón de niño). Papas doradas acompañadas de hot dog,
+                            salchichas y trocitos de pollo broaster. Divertida y sabrosa.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">450 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 10-15 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato salchipapas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/salchipapa-huevo.jpg" alt="Salchipapa con Huevo y Chorizo">
+                        <div class="plato-badge">Potente</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Contiene:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Salchicha Frankfurt</li>
+                                    <li>Hot dog</li>
+                                    <li>Huevo frito</li>
+                                    <li>Chorizo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Salchipapa Huevo & Chorizo</h3>
+                            <div class="precio">S/ 17.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            La versión más contundente. Papas crocantes con salchichas, huevo frito y chorizo artesanal.
+                            Un plato para matar el hambre de verdad.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">500 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 15-20 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato salchipapas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/salchipapa-nuggets.jpg" alt="Salchipapa con Nuggets">
+                        <div class="plato-badge">¡Para todos!</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Contiene:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Papas fritas</li>
+                                    <li>Salchicha Frankfurt</li>
+                                    <li>Hot dog</li>
+                                    <li>Nuggets de pollo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Salchipapa con Nuggets</h3>
+                            <div class="precio">S/ 15.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Mezcla perfecta entre lo clásico y lo crujiente. Papas doradas con salchichas y nuggets. Un
+                            combo infalible para chicos y grandes.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">450 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 10-15 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato guarniciones" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/arroz-blanco.jpg" alt="Arroz Blanco">
+                        <div class="plato-badge">Clásico</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Detalle:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Porción individual</li>
+                                    <li>Grano suelto</li>
+                                    <li>Acompaña todo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Arroz Blanco</h3>
+                            <div class="precio">S/ 6.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Arroz graneado y suave, ideal para acompañar carnes, alitas, o salchipapas. Un básico que no
+                            puede faltar.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">200 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5-10 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato guarniciones" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/papas-fritas.jpg" alt="Papas Fritas">
+                        <div class="plato-badge">Crocantes</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Detalle:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Corte clásico</li>
+                                    <li>Fritas al instante</li>
+                                    <li>Con sal y punto</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Papas Fritas</h3>
+                            <div class="precio">S/ 7.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Papas doradas al estilo casero, con el balance ideal entre crujiente por fuera y suave por
+                            dentro.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">200 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5-10 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato guarniciones" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/chorizo.jpg" alt="Chorizo">
+                        <div class="plato-badge">Sabroso</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Presentación:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Mitad de chorizo</li>
+                                    <li>Asado o a la plancha</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Chorizo</h3>
+                            <div class="precio">S/ 9.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Mitad de chorizo artesanal, jugoso y con sabor intenso. El complemento ideal para cualquier
+                            carne o parrilla.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">100 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 10 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato guarniciones" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/huevo-frito.jpg" alt="Huevo Frito">
+                        <div class="plato-badge">Simple y perfecto</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Preparado al momento</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Yema jugosa</li>
+                                    <li>Clara dorada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Huevo Frito</h3>
+                            <div class="precio">S/ 2.50</div>
+                        </div>
+                        <p class="plato-desc">
+                            Huevo con yema blanda y bordes crocantes. Ideal para salchipapas o carnes. Un clásico
+                            complemento.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">60 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato guarniciones" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/ensalada.jpg" alt="Ensalada Clásica">
+                        <div class="plato-badge">Fresca</div>
+                        <div class="plato-overlay">
+                            <div class="overlay-contenido">
+                                <h3>Incluye:</h3>
+                                <ul class="ingredientes-lista">
+                                    <li>Lechuga</li>
+                                    <li>Tomate</li>
+                                    <li>Zanahoria rallada</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plato-info">
+                        <div class="plato-encabezado">
+                            <h3>Ensalada Clásica</h3>
+                            <div class="precio">S/ 8.00</div>
+                        </div>
+                        <p class="plato-desc">
+                            Ensalada fresca del día. Ligera y perfecta para balancear cualquier plato a la parrilla.
+                        </p>
+                        <div class="plato-footer">
+                            <span class="calorias">100 g</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5 min
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/limonada.jpg" alt="Limonada">
+                        <div class="plato-badge">Refrescante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Limonada Natural</h3>
+                        <div class="precio">1L: S/ 15.00 | 1/2L: S/ 8.00</div>
+                        <p class="plato-desc">Bebida cítrica natural, preparada al momento. Perfecta para acompañar
+                            carnes o comidas ligeras.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/limonada-hierbabuena.jpg" alt="Limonada Hierbabuena">
+                        <div class="plato-badge">Con hierbas</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Limonada con Hierbabuena</h3>
+                        <div class="precio">1L: S/ 16.00 | 1/2L: S/ 8.50</div>
+                        <p class="plato-desc">Refrescante fusión de limón natural con hierbabuena fresca. Ideal para
+                            días de calor.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/limonada-menta.jpg" alt="Limonada Menta">
+                        <div class="plato-badge">Aromática</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Limonada con Menta</h3>
+                        <div class="precio">1L: S/ 16.00 | 1/2L: S/ 8.50</div>
+                        <p class="plato-desc">Deliciosa combinación de limón con un toque mentolado. Refresca y limpia
+                            el paladar.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/maracuya.jpg" alt="Jugo de Maracuyá">
+                        <div class="plato-badge">Exótico</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Jugo de Maracuyá</h3>
+                        <div class="precio">1L: S/ 17.00 | 1/2L: S/ 9.00</div>
+                        <p class="plato-desc">Jugo natural de maracuyá, con el equilibrio justo entre ácido y dulce.
+                            Refresca y activa.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/chicha-morada.jpg" alt="Chicha Morada">
+                        <div class="plato-badge">Tradicional</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Chicha Morada</h3>
+                        <div class="precio">1L: S/ 15.00 | 1/2L: S/ 8.00</div>
+                        <p class="plato-desc">Bebida ancestral a base de maíz morado, canela y clavo. Dulce, fresca y
+                            muy peruana.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/naranjada.jpg" alt="Naranjada">
+                        <div class="plato-badge">Cítrica</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Naranjada Natural</h3>
+                        <div class="precio">1L: S/ 17.00 | 1/2L: S/ 9.00</div>
+                        <p class="plato-desc">Zumo de naranja natural recién exprimido. Dulce y refrescante, va bien con
+                            cualquier comida.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/jugo-fresa.jpg" alt="Jugo de Fresa">
+                        <div class="plato-badge">Natural</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Jugo de Fresa</h3>
+                        <div class="precio">1L: S/ 13.00 | 1/2L: S/ 10.00</div>
+                        <p class="plato-desc">Preparado con fresas frescas. Dulce, refrescante y perfecto para acompañar
+                            cualquier comida.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/jugo-pina.jpg" alt="Jugo de Piña">
+                        <div class="plato-badge">Refrescante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Jugo de Piña</h3>
+                        <div class="precio">1L: S/ 13.00 | 1/2L: S/ 10.00</div>
+                        <p class="plato-desc">Natural y ligeramente ácido. Muy digestivo. Ideal para acompañar platos
+                            grasos o picantes.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/jugo-mango.jpg" alt="Jugo de Mango">
+                        <div class="plato-badge">Exótico</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Jugo de Mango</h3>
+                        <div class="precio">1L: S/ 13.00 | 1/2L: S/ 10.00</div>
+                        <p class="plato-desc">Jugo espeso, dulce y lleno de sabor tropical. Excelente opción como bebida
+                            o postre líquido.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/jugo-papaya.jpg" alt="Jugo de Papaya Arequipeña">
+                        <div class="plato-badge">Local</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Papaya Arequipeña</h3>
+                        <div class="precio">S/ 10.00</div>
+                        <p class="plato-desc">Jugo fresco de papaya regional. Suave, dulce y ligero, recomendado para
+                            acompañar almuerzos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/kola-personal.jpg" alt="Kola Escocesa Personal">
+                        <div class="plato-badge">Personal</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Kola Escocesa Personal</h3>
+                        <div class="precio">S/ 4.50</div>
+                        <p class="plato-desc">Gaseosa tradicional arequipeña en formato individual. Ideal para un
+                            almuerzo ligero.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/kola-600.jpg" alt="Kola Escocesa 600 ml">
+                        <div class="plato-badge">Botella mediana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Kola Escocesa 600 ml</h3>
+                        <div class="precio">S/ 6.50</div>
+                        <p class="plato-desc">Sabor dulce único, perfecta para compartir entre dos o para acompañar
+                            platos fuertes.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/kola-1l.jpg" alt="Kola Escocesa 1 Litro">
+                        <div class="plato-badge">Compartible</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Kola Escocesa 1 Litro</h3>
+                        <div class="precio">S/ 11.00</div>
+                        <p class="plato-desc">Formato familiar para 2 o más personas. Ideal para mesas con varios
+                            platos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/kola-15l.jpg" alt="Kola Escocesa 1.5 Litros">
+                        <div class="plato-badge">Grupo pequeño</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Kola Escocesa 1.5 Litros</h3>
+                        <div class="precio">S/ 14.00</div>
+                        <p class="plato-desc">Gaseosa emblemática del sur del Perú. Rendidor, económico y siempre
+                            bienvenido.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/kola-225.jpg" alt="Kola Escocesa 2.25L">
+                        <div class="plato-badge">Familiar</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Kola Escocesa 2.25 Litros</h3>
+                        <div class="precio">S/ 16.00</div>
+                        <p class="plato-desc">La más grande. Para grupos, celebraciones o para quienes nunca se cansan
+                            de su sabor dulce.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/coca-600.jpg" alt="Coca-Cola 600 ml">
+                        <div class="plato-badge">Clásica</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Coca-Cola 600 ml</h3>
+                        <div class="precio">S/ 6.00</div>
+                        <p class="plato-desc">El sabor clásico y burbujeante que nunca falla. Ideal para acompañar
+                            cualquier comida.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/coca-1l.jpg" alt="Coca-Cola 1 Litro">
+                        <div class="plato-badge">Mediana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Coca-Cola 1 Litro</h3>
+                        <div class="precio">S/ 10.50</div>
+                        <p class="plato-desc">Formato ideal para compartir. El sabor burbujeante de siempre en botella
+                            de 1 litro.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/coca-25l.jpg" alt="Coca-Cola 2.5 Litros">
+                        <div class="plato-badge">Familiar</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Coca-Cola 2.5 Litros</h3>
+                        <div class="precio">S/ 15.50</div>
+                        <p class="plato-desc">Ideal para grupos o familias. El clásico sabor de cola en su presentación
+                            más grande.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/inka-600.jpg" alt="Inka Kola 600 ml">
+                        <div class="plato-badge">Peruana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Inka Kola 600 ml</h3>
+                        <div class="precio">S/ 6.00</div>
+                        <p class="plato-desc">El sabor del Perú. Dulce, dorado y perfecto para acompañar platos criollos
+                            o parrillas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/inka-1l.jpg" alt="Inka Kola 1 Litro">
+                        <div class="plato-badge">Peruana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Inka Kola 1 Litro</h3>
+                        <div class="precio">S/ 10.50</div>
+                        <p class="plato-desc">Sabor único y nacional en presentación mediana, ideal para 2 personas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/inka-25l.jpg" alt="Inka Kola 2.5 Litros">
+                        <div class="plato-badge">Grande</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Inka Kola 2.5 Litros</h3>
+                        <div class="precio">S/ 15.50</div>
+                        <p class="plato-desc">Botella familiar para compartir en grupo. El sabor más peruano de todos.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/agua.jpg" alt="Agua Mineral">
+                        <div class="plato-badge">Sin gas</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Agua Mineral</h3>
+                        <div class="precio">S/ 3.00</div>
+                        <p class="plato-desc">Natural, purificada y refrescante. Perfecta para mantenerte hidratado sin
+                            gas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/te-hierbabuena.jpg" alt="Té de Hierbabuena">
+                        <div class="plato-badge">Digestivo</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Té de Hierbabuena 1L</h3>
+                        <div class="precio">S/ 16.00</div>
+                        <p class="plato-desc">Infusión suave y aromática, ideal para después de comer. Ayuda a la
+                            digestión y relaja.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/te-jamaica.jpg" alt="Té de Jamaica">
+                        <div class="plato-badge">Antioxidante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Té de Jamaica 1L</h3>
+                        <div class="precio">S/ 17.00</div>
+                        <p class="plato-desc">Té rojo de flor de Jamaica, ácido, ligero y refrescante. Bueno para el
+                            sistema inmunológico.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/te-cacao.jpg" alt="Té de Cacao">
+                        <div class="plato-badge">Energizante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Té de Cacao 1L</h3>
+                        <div class="precio">S/ 16.00</div>
+                        <p class="plato-desc">Infusión de cáscara de cacao, con sabor a chocolate suave. Aromático y
+                            natural.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/te-piteado.jpg" alt="Té Piteado">
+                        <div class="plato-badge">Con licor</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Té Piteado</h3>
+                        <div class="precio">S/ 9.00</div>
+                        <p class="plato-desc">Infusión caliente con opción de pisco o anisado. Ideal para el frío o
+                            después de comer. Reconfortante y tradicional.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/manzanilla.jpg" alt="Manzanilla">
+                        <div class="plato-badge">Relajante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Infusión de Manzanilla</h3>
+                        <div class="precio">S/ 4.00</div>
+                        <p class="plato-desc">Tisana suave con propiedades relajantes. Ideal para después de comer o
+                            antes de dormir.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/anis.jpg" alt="Anís">
+                        <div class="plato-badge">Digestivo</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Infusión de Anís</h3>
+                        <div class="precio">S/ 4.00</div>
+                        <p class="plato-desc">Infusión clásica con aroma y sabor anisado. Ayuda a la digestión y calma
+                            el estómago.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/te-canela-clavo.jpg" alt="Té Canela y Clavo">
+                        <div class="plato-badge">Aromático</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Té de Canela y Clavo</h3>
+                        <div class="precio">S/ 4.00</div>
+                        <p class="plato-desc">Infusión caliente especiada con canela y clavo de olor. Estimula y
+                            reconforta.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato bebidas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/cafe.jpg" alt="Café Instantáneo">
+                        <div class="plato-badge">Energía rápida</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Café Instantáneo</h3>
+                        <div class="precio">S/ 4.50</div>
+                        <p class="plato-desc">Café caliente preparado al instante. Para acompañar el postre o levantar
+                            el ánimo.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/queirolo.jpg" alt="S. Queirolo Borgoña">
+                        <div class="plato-badge">Peruano</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>S. Queirolo Borgoña</h3>
+                        <div class="precio">S/ 34.00</div>
+                        <p class="plato-desc">Vino tinto dulce de uva borgoña. Ideal para acompañar carnes, parrillas o
+                            como entrada suave.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/h-abuelo.jpg" alt="H. del Abuelo Borgoña">
+                        <div class="plato-badge">Dulce</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>H. del Abuelo Borgoña</h3>
+                        <div class="precio">S/ 34.00</div>
+                        <p class="plato-desc">Vino dulce y suave con aroma a frutas rojas. Ideal para compartir en mesa
+                            con entradas y carnes blancas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/tabernero.jpg" alt="Tabernero Tinto">
+                        <div class="plato-badge">Clásico</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Tabernero Tinto</h3>
+                        <div class="precio">S/ 34.00</div>
+                        <p class="plato-desc">Vino tinto semi seco con cuerpo ligero. Marida muy bien con carnes rojas y
+                            parrillas simples.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/intipalka.jpg" alt="Intipalka">
+                        <div class="plato-badge">Premium</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Intipalka</h3>
+                        <div class="precio">S/ 60.00</div>
+                        <p class="plato-desc">Vino peruano de calidad superior, con notas frutales y estructura
+                            elegante. Ideal para cortes especiales.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/tacama.jpg" alt="Tacama">
+                        <div class="plato-badge">Reservado</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Tacama</h3>
+                        <div class="precio">S/ 55.00</div>
+                        <p class="plato-desc">Vino peruano elegante de sabor suave y afrutado. Acompaña carnes suaves o
+                            pastas con salsas cremosas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/frontera.jpg" alt="Frontera Chileno">
+                        <div class="plato-badge">Chileno</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Frontera</h3>
+                        <div class="precio">S/ 58.00</div>
+                        <p class="plato-desc">Vino chileno suave y afrutado. Ideal para acompañar carnes rojas o quesos
+                            suaves.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/casillero.jpg" alt="Casillero del Diablo">
+                        <div class="plato-badge">Chileno</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Casillero del Diablo</h3>
+                        <div class="precio">S/ 65.00</div>
+                        <p class="plato-desc">Vino tinto chileno con cuerpo, notas de ciruela y especias. Ideal para
+                            cortes grasos y platos intensos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/faustino.jpg" alt="Faustino Español">
+                        <div class="plato-badge">Español</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Faustino</h3>
+                        <div class="precio">S/ 75.00</div>
+                        <p class="plato-desc">Vino español de la Rioja, elegante y seco, con notas a roble. Recomendado
+                            para ocasiones especiales.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/pata-negra.jpg" alt="Pata Negra Español">
+                        <div class="plato-badge">Español</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Pata Negra</h3>
+                        <div class="precio">S/ 65.00</div>
+                        <p class="plato-desc">Vino tinto intenso con carácter ibérico. Perfecto para carnes al grill o
+                            embutidos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/trapiche.jpg" alt="Trapiche Argentino">
+                        <div class="plato-badge">Argentino</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Trapiche</h3>
+                        <div class="precio">S/ 55.00</div>
+                        <p class="plato-desc">Vino tinto argentino con notas frutales y taninos suaves. Buen maridaje
+                            con carnes y quesos curados.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/navarro-arboles.jpg" alt="Navarro Correas Los Árboles">
+                        <div class="plato-badge">Argentina</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Navarro Correas – Los Árboles</h3>
+                        <div class="precio">S/ 70.00</div>
+                        <p class="plato-desc">Vino argentino joven, con notas de frutos rojos y taninos suaves. Perfecto
+                            para carnes y pastas con salsas ligeras.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato vinos" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/navarro-coleccion.jpg" alt="Navarro Correas Colección Privada">
+                        <div class="plato-badge">Argentina</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Navarro Correas – Colección Privada</h3>
+                        <div class="precio">S/ 70.00</div>
+                        <p class="plato-desc">Vino elegante y de cuerpo medio, con crianza en barrica. Ideal para cortes
+                            especiales y ocasiones destacadas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato sangrias" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/sangria-casa.jpg" alt="Sangría de la Casa">
+                        <div class="plato-badge">Vino tinto</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Sangría de la Casa</h3>
+                        <div class="precio">S/ 36.00</div>
+                        <p class="plato-desc">Preparada con vino tinto, frutas frescas y un toque de licor. Refrescante,
+                            intensa y perfecta para compartir.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato sangrias" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/sangria-verano.jpg" alt="Sangría de Verano">
+                        <div class="plato-badge">Vino blanco</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Sangría de Verano</h3>
+                        <div class="precio">S/ 35.00</div>
+                        <p class="plato-desc">Sangría clara y suave hecha con vino blanco, frutas cítricas y mucho
+                            hielo. Ideal para días calurosos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/pisco-sour.jpg" alt="Pisco Sour">
+                        <div class="plato-badge">Clásico peruano</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Pisco Sour</h3>
+                        <div class="precio">S/ 17.00</div>
+                        <p class="plato-desc">El cóctel bandera del Perú. Pisco, limón, jarabe de goma y clara de huevo.
+                            Equilibrado, suave y espumoso.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/maracuya-sour.jpg" alt="Maracuyá Sour">
+                        <div class="plato-badge">Frutal</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Maracuyá Sour</h3>
+                        <div class="precio">S/ 16.00</div>
+                        <p class="plato-desc">Una variante tropical del clásico. Pisco con jugo natural de maracuyá.
+                            Dulce, ácido y refrescante.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/machu-picchu.webp" alt="Machu Picchu">
+                        <div class="plato-badge">Tricolor</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Machu Picchu</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Coctel emblemático en capas: granadina, jugo de naranja, licor de menta y
+                            pisco. Visualmente impactante y delicioso.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/algarrobina.jpg" alt="Coctel de Algarrobina">
+                        <div class="plato-badge">Dulce</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Coctel de Algarrobina</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Mezcla cremosa de pisco, leche evaporada, huevo y algarrobina. Dulce,
+                            nutritivo y típico del Perú.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/mojito clasico.webp" alt="Mojito Clásico">
+                        <div class="plato-badge">Refrescante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Mojito Clásico</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Ron blanco, hierbabuena, limón, azúcar y soda. El clásico caribeño para
+                            refrescarte con estilo.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/mojito-frutos-rojos.avif" alt="Mojito de Frutos Rojos">
+                        <div class="plato-badge">Afrodisíaco</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Mojito de Frutos Rojos</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Versión dulce y colorida del mojito, con frutas rojas maceradas. Fresco y
+                            con toque ácido.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/mojito-pasión.webp" alt="Mojito Pasión">
+                        <div class="plato-badge">Tropical</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Mojito Pasión</h3>
+                        <div class="precio">S/ 17.00</div>
+                        <p class="plato-desc">Con maracuyá natural, menta y ron blanco. Refrescante, afrutado y perfecto
+                            para el calor.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/pina-colada.jpg" alt="Piña Colada">
+                        <div class="plato-badge">Cremoso</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Piña Colada</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Ron blanco, crema de coco y jugo de piña. Un clásico caribeño dulce, suave
+                            y refrescante.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/cuba-libre.avif" alt="Cuba Libre">
+                        <div class="plato-badge">Ron & Cola</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Cuba Libre</h3>
+                        <div class="precio">S/ 16.00</div>
+                        <p class="plato-desc">Ron oscuro, gaseosa de cola y un toque de limón. Refrescante y clásico.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/tinto-de-verano.jpg" alt="Tinto de Verano">
+                        <div class="plato-badge">Vino & soda</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Tinto de Verano</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Vino tinto mezclado con gaseosa blanca y hielo. Ligero, suave y perfecto
+                            para días calurosos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/laguna-azul.avif" alt="Laguna Azul">
+                        <div class="plato-badge">Color vibrante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Laguna Azul</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Vodka, curazao azul, limón y soda. Refrescante y llamativo visualmente.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/sunrise.png" alt="Sunrise">
+                        <div class="plato-badge">Dulce y cítrico</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Sunrise</h3>
+                        <div class="precio">S/ 18.00</div>
+                        <p class="plato-desc">Tequila, jugo de naranja y granadina. Una explosión de color y sabor
+                            tropical.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/margarita-corona.webp" alt="Margarita Corona">
+                        <div class="plato-badge">Fusión</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Margarita Corona</h3>
+                        <div class="precio">S/ 25.00</div>
+                        <p class="plato-desc">Tequila, limón, triple sec y una mini Corona invertida. Refrescante y
+                            atrevido.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/long-island-blue.jpg" alt="Long Island Blue">
+                        <div class="plato-badge">Potente</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Long Island Blue</h3>
+                        <div class="precio">S/ 19.00</div>
+                        <p class="plato-desc">Varios licores, curazao azul y soda. Un cóctel fuerte y vibrante. No apto
+                            para principiantes.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/aperol-spritz.jpg" alt="Aperol Spritz">
+                        <div class="plato-badge">Italiano</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Aperol Spritz</h3>
+                        <div class="precio">S/ 23.00</div>
+                        <p class="plato-desc">Aperol, prosecco y soda con hielo. Ligero, burbujeante y elegante.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/baileys-pasion.png" alt="Baileys Pasión">
+                        <div class="plato-badge">Cremoso</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Baileys Pasión</h3>
+                        <div class="precio">S/ 19.00</div>
+                        <p class="plato-desc">Licor de crema Baileys con toques de chocolate y hielo. Suave, dulce y
+                            delicioso.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/orgasmo.avif" alt="Orgasmo">
+                        <div class="plato-badge">Intenso</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Orgasmo</h3>
+                        <div class="precio">S/ 19.00</div>
+                        <p class="plato-desc">Mezcla de Baileys, licor de café y crema. Coctel cremoso y con carácter.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/negroni.jpg" alt="Negroni">
+                        <div class="plato-badge">Amargo</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Negroni</h3>
+                        <div class="precio">S/ 20.00</div>
+                        <p class="plato-desc">Gin, vermut rojo y Campari. Un clásico italiano con carácter fuerte y
+                            aroma herbal.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/gin-tonic.jpg" alt="Gin Tonic">
+                        <div class="plato-badge">Clásico</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Gin Tonic</h3>
+                        <div class="precio">S/ 24.00</div>
+                        <p class="plato-desc">Gin seco con agua tónica y hielo. Simple, elegante y muy refrescante.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/gin-berries.jpg" alt="Gin Berries">
+                        <div class="plato-badge">Frutado</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Gin Berries</h3>
+                        <div class="precio">S/ 23.00</div>
+                        <p class="plato-desc">Gin infusionado con frutos rojos y tónica. Dulce, suave y llamativo.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/gin-tonic-pepino.jpg" alt="Gin Tonic Pepino">
+                        <div class="plato-badge">Refrescante</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Gin Tonic Pepino</h3>
+                        <div class="precio">S/ 22.00</div>
+                        <p class="plato-desc">Gin con tónica y rodajas de pepino. Fresco, limpio y perfecto para el
+                            verano.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cocteles" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/fernet-branca.webp" alt="Fernet Branca">
+                        <div class="plato-badge">Argentina</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Fernet Branca</h3>
+                        <div class="precio">S/ 19.00</div>
+                        <p class="plato-desc">Bebida emblemática argentina, amarga y aromática. Ideal con cola y hielo.
+                            Para paladares fuertes y auténticos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato whiskies" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/black-label.jpg" alt="Johnnie Walker Black Label">
+                        <div class="plato-badge">Etiqueta Negra</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Johnnie Walker Black Label</h3>
+                        <div class="precio">S/ 23.00</div>
+                        <p class="plato-desc">Whisky escocés de mezcla superior. Suave, con notas ahumadas y madurado en
+                            barrica por más de 12 años.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato whiskies" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/ballantines.jpg" alt="Ballantine’s Whisky">
+                        <div class="plato-badge">Blended Scotch</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Ballantine’s Whisky</h3>
+                        <div class="precio">S/ 23.00</div>
+                        <p class="plato-desc">Whisky escocés clásico, mezcla equilibrada con notas suaves y ahumadas.
+                            Perfecto para tomar solo o con hielo.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato whiskies" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/jack-daniels.jpg" alt="Jack Daniel's Sour Mash">
+                        <div class="plato-badge">Americano</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Jack Daniel’s</h3>
+                        <div class="precio">S/ 24.00</div>
+                        <p class="plato-desc">Tennessee Whiskey con 40° de alcohol. Notas de vainilla y roble. Famoso
+                            por su suavidad y carácter único.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato whiskies" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/chivas.jpg" alt="Chivas Regal 12 años">
+                        <div class="plato-badge">12 años</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Chivas Regal</h3>
+                        <div class="precio">S/ 23.00</div>
+                        <p class="plato-desc">Whisky escocés envejecido 12 años. Suave, elegante y con un toque de miel
+                            y frutas.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato whiskies" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/red-label.jpg" alt="Johnnie Walker Red Label">
+                        <div class="plato-badge">Etiqueta Roja</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Johnnie Walker Red Label</h3>
+                        <div class="precio">S/ 21.00</div>
+                        <p class="plato-desc">Mezcla escocesa con carácter fuerte, ideal para tomar con hielo o en
+                            cócteles clásicos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/stella.jpg" alt="Stella Artois">
+                        <div class="plato-badge">Belga</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Stella Artois</h3>
+                        <div class="precio">S/ 11.00</div>
+                        <p class="plato-desc">Cerveza premium de origen belga. Suave, refrescante y ligeramente amarga.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/heineken.jpg" alt="Heineken">
+                        <div class="plato-badge">Holandesa</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Heineken</h3>
+                        <div class="precio">S/ 11.00</div>
+                        <p class="plato-desc">Cerveza lager de sabor limpio y burbujeante. Importada y refrescante.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/corona.jpg" alt="Corona">
+                        <div class="plato-badge">Mexicana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Corona</h3>
+                        <div class="precio">S/ 10.00</div>
+                        <p class="plato-desc">Cerveza clara ideal con rodaja de limón. Perfecta para días soleados.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/cusquena-negra.jpg" alt="Cusqueña Negra">
+                        <div class="plato-badge">Peruana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Cusqueña Negra</h3>
+                        <div class="precio">S/ 9.00</div>
+                        <p class="plato-desc">Cerveza oscura con notas a malta tostada y caramelo. Ideal para carnes y
+                            embutidos.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/cusquena-dorada.jpg" alt="Cusqueña Dorada">
+                        <div class="plato-badge">Peruana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Cusqueña Dorada</h3>
+                        <div class="precio">S/ 9.00</div>
+                        <p class="plato-desc">Cerveza lager clara, suave y bien equilibrada. Acompaña cualquier plato.
+                        </p>
+                    </div>
+                </article>
+                <article class="tarjeta-plato cervezas" data-aos="flip-left">
+                    <div class="plato-imagen">
+                        <img src="img/cusquena-trigo.jpg" alt="Cusqueña Trigo">
+                        <div class="plato-badge">Peruana</div>
+                    </div>
+                    <div class="plato-info">
+                        <h3>Cusqueña Trigo</h3>
+                        <div class="precio">S/ 9.00</div>
+                        <p class="plato-desc">Cerveza elaborada con trigo. Suave, espumosa y refrescante con notas
+                            cítricas.</p>
+                    </div>
+                </article>
 
             </div>
         </div>
