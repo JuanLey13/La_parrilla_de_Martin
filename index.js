@@ -70,8 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Desplazarse suavemente a los platos
                 const seccion = document.getElementById("menu");
                 if (seccion) {
-                    seccion.scrollIntoView({ behavior: "smooth" });
+                    const topOffset = seccion.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({
+                        top: topOffset,
+                        behavior: "smooth"
+                    });
                 }
+
             });
         });
     }
@@ -170,3 +175,4 @@ document.addEventListener('DOMContentLoaded', function () {
   `;
     document.head.appendChild(style);
 });
+s
