@@ -1,4 +1,3 @@
-/* Agregar al inicio */
 * {
     max-width: 100%;
     box-sizing: border-box;
@@ -13,7 +12,6 @@
     --sombra: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos Generales */
 html {
     scroll-behavior: smooth;
 }
@@ -26,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -61,7 +58,6 @@ body {
     pointer-events: none;
 }
 
-/* Navegación */
 .cabecera {
     position: fixed;
     width: 100%;
@@ -133,8 +129,6 @@ body {
     width: 100%;
 }
 
-/* ========== BOTONES CORREGIDOS ========== */
-/* Botón Solicitar Mozo */
 .boton-mozos {
     background: #4CAF50;
     color: var(--blanco);
@@ -156,7 +150,6 @@ body {
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
 }
 
-/* Botón Realizar Pedido */
 .boton-reserva {
     background: var(--dorado);
     color: var(--negro);
@@ -192,7 +185,6 @@ body {
     transition: var(--transicion);
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     position: relative;
@@ -365,7 +357,6 @@ body {
     }
 }
 
-/* Menú Premium */
 .seccion-menu {
     padding: 5rem 0;
     background: var(--gris-oscuro);
@@ -537,7 +528,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* Sección Experiencia */
 .seccion-experiencia {
     padding: 5rem 0;
     background: var(--negro);
@@ -614,7 +604,6 @@ body {
     border-radius: 10px;
 }
 
-/* Footer */
 .footer {
     background: var(--gris-oscuro);
     padding: 4rem 0 2rem;
@@ -727,16 +716,15 @@ body {
     font-size: 0.85rem;
 }
 
-/* Categorías Menú */
 .categorias-menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.7rem;
+    display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
 }
-
 
 .boton-categoria {
     background: transparent;
@@ -757,18 +745,15 @@ body {
     color: var(--negro);
 }
 
-/* Ocultar todos los platos inicialmente */
 .grid-menu .tarjeta-plato {
     display: none;
 }
 
-/* Mostrar solo los activos */
 .grid-menu .tarjeta-plato.activo {
     display: block;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
+@media (min-width:768px) {
     .nav-contenedor {
         padding: 1.5rem 5%;
     }
@@ -839,7 +824,7 @@ body {
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width:992px) {
     .titulo-hero {
         font-size: 4rem;
     }
@@ -857,7 +842,6 @@ body {
     }
 }
 
-/* Hamburguesa active */
 .hamburguesa.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -870,8 +854,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Menú móvil */
-@media (max-width: 991px) {
+@media (max-width:991px) {
     .hamburguesa {
         display: block;
     }
@@ -901,15 +884,11 @@ body {
     }
 }
 
-/* ======== AJUSTES ESPECÍFICOS PARA MÓVIL ======== */
-@media (max-width: 767px) {
-
-    /* Prevenir desplazamiento horizontal */
+@media (max-width:767px) {
     body {
         overflow-x: hidden;
     }
 
-    /* Navegación móvil */
     .nav-contenedor {
         padding: 0.8rem 5%;
         flex-wrap: wrap;
@@ -964,7 +943,6 @@ body {
         font-size: 0.9rem;
     }
 
-    /* Menú de categorías */
     .categorias-menu {
         justify-content: flex-start;
         overflow-x: auto;
@@ -984,7 +962,6 @@ body {
         flex-shrink: 0;
     }
 
-    /* Tarjetas de plato */
     .grid-menu {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1002,7 +979,6 @@ body {
         font-size: 0.85rem;
     }
 
-    /* Sección experiencia */
     .seccion-experiencia {
         padding: 3rem 0;
     }
@@ -1019,7 +995,6 @@ body {
         height: 300px;
     }
 
-    /* Footer */
     .footer {
         padding: 3rem 0 1.5rem;
     }
@@ -1044,8 +1019,7 @@ body {
     }
 }
 
-/* Optimización para pantallas muy pequeñas */
-@media (max-width: 480px) {
+@media (max-width:480px) {
     .video-fondo {
         transform: translate(-50%, -50%) scale(1.1);
     }
@@ -1060,7 +1034,6 @@ body {
         padding: 0 15px;
     }
 
-    /* Precios en móviles */
     .plato-encabezado {
         flex-direction: column;
         align-items: flex-start;
@@ -1071,11 +1044,6 @@ body {
     }
 }
 
-/* ========================================== */
-/* CORRECCIONES URGENTES PARA OVERFLOW MOBILE */
-/* ========================================== */
-
-/* Solución global para desplazamiento horizontal */
 html,
 body {
     max-width: 100vw;
@@ -1083,14 +1051,12 @@ body {
     position: relative;
 }
 
-/* Contenedores principales */
 .contenedor,
 .nav-contenedor {
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
 
-/* Fuerza a los elementos a mantenerse dentro de pantalla */
 .grid-menu,
 .grid-experiencia,
 .grid-footer,
@@ -1100,22 +1066,17 @@ body {
     overflow-x: hidden;
 }
 
-/* Corrección específica para preloader */
 .preloader {
     max-width: 100vw;
 }
 
-/* Alineación para nav-derecha */
 .nav-derecha {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-/* Añadir al final del archivo */
-
-/* Optimización de barra de navegación en móviles */
-@media (max-width: 767px) {
+@media (max-width:767px) {
     .nav-contenedor {
         flex-wrap: nowrap;
     }
@@ -1133,13 +1094,20 @@ body {
         max-width: 100px;
     }
 
+    .boton-mozos,
+    .boton-reserva {
+        padding: 0.6rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+        border-radius: 30px !important;
+    }
 
     .nav-derecha {
         gap: 0.5rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
     .marca {
         font-size: 0.7rem;
         max-width: 80px;
@@ -1156,9 +1124,7 @@ body {
     }
 }
 
-/* ========== CORRECCIÓN DEFINITIVA PARA BOTONES ========== */
-/* Asegurar que los botones mantengan su forma ovalada en todos los dispositivos */
-@media (max-width: 991px) {
+@media (max-width:991px) {
 
     .boton-mozos,
     .boton-reserva {
@@ -1179,7 +1145,7 @@ body {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width:767px) {
 
     .boton-mozos,
     .boton-reserva {
@@ -1193,7 +1159,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
     .boton-mozos,
     .boton-reserva {
