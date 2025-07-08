@@ -61,6 +61,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const platosCategoria = document.querySelectorAll(`.tarjeta-plato.${categoria}`);
                 platosCategoria.forEach(plato => plato.classList.add('activo'));
+                // Esperar a que los platos se activen visualmente antes de hacer scroll
+                setTimeout(() => {
+                    const primerPlatoVisible = document.querySelector(`.tarjeta-plato.${categoria}.activo`);
+                    if (primerPlatoVisible) {
+                        const offset = primerPlatoVisible.getBoundingClientRect().top + window.scrollY - 100;
+                        window.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100); // Espera 100 milisegundos
 
                 setTimeout(fixOverflow, 50);
                 if (typeof AOS !== 'undefined') {
