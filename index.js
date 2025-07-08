@@ -167,63 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Funcionalidad para llamar al mozo - NUEVO
-    const botonMozo = document.getElementById('llamar-mozo');
-    if (botonMozo) {
-        botonMozo.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Crear notificación
-            const notificacion = document.createElement('div');
-            notificacion.textContent = '🛎️ Un mozo se dirigirá a su mesa en breve';
-            notificacion.style.position = 'fixed';
-            notificacion.style.bottom = '20px';
-            notificacion.style.left = '50%';
-            notificacion.style.transform = 'translateX(-50%)';
-            notificacion.style.backgroundColor = '#4CAF50'; // Verde
-            notificacion.style.color = 'white';
-            notificacion.style.padding = '15px 25px';
-            notificacion.style.borderRadius = '30px';
-            notificacion.style.zIndex = '10000';
-            notificacion.style.fontWeight = '600';
-            notificacion.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
-            notificacion.style.animation = 'fadeInUp 0.5s forwards';
-
-            document.body.appendChild(notificacion);
-
-            // Animación para desaparecer
-            setTimeout(() => {
-                notificacion.style.animation = 'fadeOutDown 0.5s forwards';
-                setTimeout(() => {
-                    notificacion.remove();
-                }, 500);
-            }, 3000);
-        });
-    }
-
     // Agregar animaciones CSS para la notificación
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, 20px);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, 0);
-            }
-        }
-        @keyframes fadeOutDown {
-            from {
-                opacity: 1;
-                transform: translate(-50%, 0);
-            }
-            to {
-                opacity: 0;
-                transform: translate(-50%, 20px);
-            }
-        }
-    `;
-    document.head.appendChild(style);
+
 });

@@ -383,9 +383,10 @@ body {
 
 .lista-platos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
 }
+
 
 .plato-item {
     background: var(--negro);
@@ -733,9 +734,12 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .lista-platos {
-        grid-template-columns: 1fr;
+    @media (max-width: 767px) {
+        .lista-platos {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
+
 
     .nav-contenedor {
         padding: 0.8rem;

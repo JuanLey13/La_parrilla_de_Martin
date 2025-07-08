@@ -729,14 +729,14 @@ body {
 
 /* Categorías Menú */
 .categorias-menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.7rem;
     justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
+
 
 .boton-categoria {
     background: transparent;
@@ -1133,13 +1133,6 @@ body {
         max-width: 100px;
     }
 
-    .boton-mozos,
-    .boton-reserva {
-        padding: 0.6rem 0.8rem !important;
-        font-size: 0.75rem !important;
-        white-space: nowrap;
-        border-radius: 30px !important;
-    }
 
     .nav-derecha {
         gap: 0.5rem;
