@@ -1,301 +1,213 @@
-<!-- reservas.html -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Realizar Pedido | La Parrilla de Martín</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styler.css">
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Poppins:wght@300;400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link href="styler.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="preloader">
         <div class="preloader-spinner"></div>
     </div>
-
     <header class="cabecera">
         <nav class="nav-contenedor">
-            <div class="logo-marca">
-                <img src="img/Logo.jpeg" alt="Logo Parrilla Martín" class="logo">
-                <span class="marca"> La Parrilla<br> de Martín</span>
-            </div>
-            <div class="nav-derecha">
-                <a href="index.html" class="boton-volver">
-                    <i class="fas fa-arrow-left"></i> Volver
-                </a>
-            </div>
+            <div class="logo-marca"><img alt="Logo Parrilla Martín" class="logo" src="img/Logo.jpeg" /><span
+                    class="marca"> La Parrilla<br /> de Martín</span></div>
+            <div class="nav-derecha"><a class="boton-volver" href="index.html"><i class="fas fa-arrow-left"></i> Volver
+                </a></div>
         </nav>
     </header>
-
     <main class="contenedor-pedidos">
         <div class="encabezado-seccion">
             <h1>Realizar un Pedido</h1>
             <p>Seleccione el tipo de servicio que desea</p>
         </div>
-
         <div class="opciones-pedido">
-            <div class="opcion activo" data-tipo="reservacion">
-                <i class="fas fa-calendar-check"></i>
+            <div class="opcion activo" data-tipo="reservacion"><i class="fas fa-calendar-check"></i>
                 <h3>Reservación</h3>
                 <p>Reserve una mesa para disfrutar en nuestro local</p>
             </div>
-            <div class="opcion" data-tipo="delivery">
-                <i class="fas fa-truck"></i>
+            <div class="opcion" data-tipo="delivery"><i class="fas fa-truck"></i>
                 <h3>Delivery</h3>
                 <p>Reciba su pedido en la comodidad de su hogar</p>
             </div>
-            <div class="opcion" data-tipo="recojo">
-                <i class="fas fa-store"></i>
+            <div class="opcion" data-tipo="recojo"><i class="fas fa-store"></i>
                 <h3>Recojo en Tienda</h3>
                 <p>Recoja su pedido en nuestro local</p>
             </div>
-            <div class="opcion" data-tipo="mesa">
-                <i class="fas fa-utensils"></i>
+            <div class="opcion" data-tipo="mesa"><i class="fas fa-utensils"></i>
                 <h3>Mesa</h3>
                 <p>Realizar pedido en el local</p>
             </div>
         </div>
+        <div id="bloque-interactivo" style="display: none;">
 
-        <!-- Formulario de Reservación -->
-        <div class="formulario-pedido activo" id="form-reservacion">
-            <h2><i class="fas fa-calendar-alt"></i> Reservar Mesa</h2>
-
-            <div class="grid-form">
-                <div class="form-group">
-                    <label>Nombre Completo *</label>
-                    <input type="text" id="nombre-reserva" required>
-                </div>
-                <div class="form-group">
-                    <label>Celular *</label>
-                    <input type="tel" id="celular-reserva" required>
-                </div>
-                <div class="form-group">
-                    <label>Fecha *</label>
-                    <input type="date" id="fecha-reserva" required>
-                </div>
-                <div class="form-group">
-                    <label>Hora *</label>
-                    <input type="time" id="hora-reserva" required>
-                </div>
-                <div class="form-group">
-                    <label>N° de Personas *</label>
-                    <select id="personas-reserva" required>
-                        <option value="">Seleccionar</option>
-                        <option value="1">1 persona</option>
-                        <option value="2">2 personas</option>
-                        <option value="3">3 personas</option>
-                        <option value="4">4 personas</option>
-                        <option value="5">5 personas</option>
-                        <option value="6">6 personas</option>
-                        <option value="7">7+ personas</option>
-                    </select>
+            <div class="formulario-pedido activo" id="form-reservacion">
+                <h2><i class="fas fa-calendar-alt"></i> Reservar Mesa</h2>
+                <div class="grid-form">
+                    <div class="form-group"><label>Nombre Completo *</label><input id="nombre-reserva" required=""
+                            type="text" /></div>
+                    <div class="form-group"><label>Celular *</label><input id="celular-reserva" required=""
+                            type="tel" />
+                    </div>
+                    <div class="form-group"><label>Fecha *</label><input id="fecha-reserva" required="" type="date" />
+                    </div>
+                    <div class="form-group"><label>Hora *</label><input id="hora-reserva" required="" type="time" />
+                    </div>
+                    <div class="form-group"><label>N° de Personas *</label><select id="personas-reserva" required="">
+                            <option value="">Seleccionar</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6 personas</option>
+                            <option value="7">7+ personas</option>
+                        </select></div>
                 </div>
             </div>
-        </div>
-
-        <!-- Formulario de Delivery -->
-        <div class="formulario-pedido" id="form-delivery">
-            <h2><i class="fas fa-truck"></i> Información de Delivery</h2>
-
-            <div class="grid-form">
-                <div class="form-group">
-                    <label>Nombre Completo *</label>
-                    <input type="text" id="nombre-delivery" required>
-                </div>
-                <div class="form-group">
-                    <label>Celular *</label>
-                    <input type="tel" id="celular-delivery" required>
-                </div>
-                <div class="form-group">
-                    <label>Dirección *</label>
-                    <input type="text" id="direccion-delivery" required>
-                </div>
-                <div class="form-group">
-                    <label>Distrito *</label>
-                    <select id="distrito-delivery" required>
-                        <option value="">Seleccionar distrito</option>
-                        <option value="Cayma">Cayma - S/ 5.00</option>
-                        <option value="Yanahuara">Yanahuara - S/ 6.00</option>
-                        <option value="Cerro Colorado">Cerro Colorado - S/ 8.00</option>
-                        <option value="Sachaca">Sachaca - S/ 7.00</option>
-                        <option value="Hunter">Hunter - S/ 9.00</option>
-                        <option value="Miraflores">Miraflores - S/ 6.00</option>
-                        <option value="Paucarpata">Paucarpata - S/ 7.00</option>
-                        <option value="Jacobo Hunter">Jacobo Hunter - S/ 10.00</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Referencia</label>
-                    <textarea id="referencia-delivery"></textarea>
+            <div class="formulario-pedido" id="form-delivery">
+                <h2><i class="fas fa-truck"></i> Información de Delivery</h2>
+                <div class="grid-form">
+                    <div class="form-group"><label>Nombre Completo *</label><input id="nombre-delivery" required=""
+                            type="text" /></div>
+                    <div class="form-group"><label>Celular *</label><input id="celular-delivery" required=""
+                            type="tel" />
+                    </div>
+                    <div class="form-group"><label>Dirección *</label><input id="direccion-delivery" required=""
+                            type="text" /></div>
+                    <div class="form-group"><label>Distrito *</label><select id="distrito-delivery" required="">
+                            <option value="">Seleccionar distrito</option>
+                            <option value="Cayma">Cayma - S/ 5.00</option>
+                            <option value="Yanahuara">Yanahuara - S/ 6.00</option>
+                            <option value="Cerro Colorado">Cerro Colorado - S/ 8.00</option>
+                            <option value="Sachaca">Sachaca - S/ 7.00</option>
+                            <option value="Hunter">Hunter - S/ 9.00</option>
+                            <option value="Miraflores">Miraflores - S/ 6.00</option>
+                            <option value="Paucarpata">Paucarpata - S/ 7.00</option>
+                            <option value="Jacobo Hunter">Jacobo Hunter - S/ 10.00</option>
+                        </select></div>
+                    <div class="form-group"><label>Referencia</label><textarea id="referencia-delivery"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Formulario de Recojo -->
-        <div class="formulario-pedido" id="form-recojo">
-            <h2><i class="fas fa-store"></i> Información de Recojo</h2>
-
-            <div class="grid-form">
-                <div class="form-group">
-                    <label>Nombre Completo *</label>
-                    <input type="text" id="nombre-recojo" required>
-                </div>
-                <div class="form-group">
-                    <label>Celular *</label>
-                    <input type="tel" id="celular-recojo" required>
-                </div>
-                <div class="form-group">
-                    <label>Hora de Recojo *</label>
-                    <input type="time" id="hora-recojo" required>
+            <div class="formulario-pedido" id="form-recojo">
+                <h2><i class="fas fa-store"></i> Información de Recojo</h2>
+                <div class="grid-form">
+                    <div class="form-group"><label>Nombre Completo *</label><input id="nombre-recojo" required=""
+                            type="text" /></div>
+                    <div class="form-group"><label>Celular *</label><input id="celular-recojo" required="" type="tel" />
+                    </div>
+                    <div class="form-group"><label>Hora de Recojo *</label><input id="hora-recojo" required=""
+                            type="time" /></div>
                 </div>
             </div>
-        </div>
-
-        <!-- Formulario de Mesa -->
-        <div class="formulario-pedido" id="form-mesa">
-            <h2><i class="fas fa-utensils"></i> Información de Mesa</h2>
-
-            <div class="grid-form">
-                <div class="form-group">
-                    <label>Número de Mesa *</label>
-                    <select id="mesa-numero" required>
-                        <option value="">Seleccionar mesa</option>
-                        <!-- Las opciones se generarán con JS -->
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Mozo *</label>
-                    <select id="mozo-mesa" required>
-                        <option value="">Seleccionar mozo</option>
-                        <option value="Juan Perez">Juan Perez</option>
-                        <option value="Maria Garcia">Maria Garcia</option>
-                        <option value="Carlos Lopez">Carlos Lopez</option>
-                        <option value="Ana Martinez">Ana Martinez</option>
-                    </select>
+            <div class="formulario-pedido" id="form-mesa">
+                <h2><i class="fas fa-utensils"></i> Información de Mesa</h2>
+                <div class="grid-form">
+                    <div class="form-group"><label>Número de Mesa *</label><select id="mesa-numero" required="">
+                            <option value="">Seleccionar mesa</option>
+                        </select></div>
+                    <div class="form-group"><label>Mozo *</label><select id="mozo-mesa" required="">
+                            <option value="">Seleccionar mozo</option>
+                            <option value="Juan Perez">Juan Perez</option>
+                            <option value="Maria Garcia">Maria Garcia</option>
+                            <option value="Carlos Lopez">Carlos Lopez</option>
+                            <option value="Ana Martinez">Ana Martinez</option>
+                        </select></div>
                 </div>
             </div>
-        </div>
-
-        <!-- Selección de Platos -->
-        <div class="seleccion-platos">
-            <h2><i class="fas fa-utensils"></i> Seleccione sus Platos</h2>
             <div class="filtros-platos">
-                <button class="filtro-btn active" data-categoria="todos">Todos</button>
-                <button class="filtro-btn" data-categoria="carne">Cortes Especiales</button>
+                <button class="filtro-btn active" data-categoria="carne">Cortes Especiales</button>
                 <button class="filtro-btn" data-categoria="cordero">Cordero</button>
-                <button class="filtro-btn" data-categoria="especiales">Criollos</button>
+                <button class="filtro-btn" data-categoria="criollos">Criollos</button>
+                <button class="filtro-btn" data-categoria="compartir">Combos</button>
+                <button class="filtro-btn" data-categoria="alitas">Alitas</button>
+                <button class="filtro-btn" data-categoria="salchipapas">Salchipapas</button>
+                <button class="filtro-btn" data-categoria="guarniciones">Guarniciones</button>
+                <button class="filtro-btn" data-categoria="bebidas">Bebidas</button>
+                <button class="filtro-btn" data-categoria="vinos">Vinos</button>
+                <button class="filtro-btn" data-categoria="cocteles">Cócteles</button>
+                <button class="filtro-btn" data-categoria="sangrias">Sangrías</button>
+                <button class="filtro-btn" data-categoria="whiskies">Whiskies</button>
+                <button class="filtro-btn" data-categoria="cervezas">Cervezas</button>
             </div>
 
-            <div class="lista-platos">
-                <!-- Los platos se cargarán dinámicamente con JavaScript -->
+            <div class="lista-platos"></div>
+
+            <div class="resumen-pedido">
+                <h2><i class="fas fa-receipt"></i> Resumen de su Pedido</h2>
+                <div class="detalles-resumen">
+                    <div class="resumen-items">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Plato</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Subtotal</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="items-pedido"></tbody>
+                        </table>
+                    </div>
+                    <div class="totales">
+                        <div class="total-linea"><span>Subtotal:</span><span id="subtotal">S/ 0.00</span></div>
+                        <div class="total-linea" id="costo-delivery-container"><span>Costo de Delivery:</span><span
+                                id="costo-delivery">S/ 0.00</span></div>
+                        <div class="total-linea total"><span>TOTAL:</span><span id="total-pedido">S/ 0.00</span></div>
+                    </div>
+                </div>
+                <div class="metodos-pago">
+                    <h3>Método de Pago</h3>
+                    <div class="opciones-pago">
+                        <div class="opcion-pago"><input checked="" id="pago-efectivo" name="metodo-pago" type="radio"
+                                value="efectivo" /><label for="pago-efectivo"><i class="fas fa-money-bill-wave"></i>
+                                Efectivo </label></div>
+                        <div class="opcion-pago"><input id="pago-yape" name="metodo-pago" type="radio"
+                                value="yape" /><label for="pago-yape"><i class="fas fa-mobile-alt"></i> Yape </label>
+                        </div>
+                    </div>
+                    <div class="qr-container" id="qr-yape"><img alt="Código QR Yape" src="img/qr-yape.jpg" />
+                        <p>Escanee el código para pagar con Yape</p>
+                    </div>
+                </div><button class="btn-confirmar">Confirmar Pedido</button>
             </div>
-        </div>
+        </div> <!-- Fin de bloque-interactivo -->
 
-        <!-- Resumen del Pedido -->
-        <div class="resumen-pedido">
-            <h2><i class="fas fa-receipt"></i> Resumen de su Pedido</h2>
-
-            <div class="detalles-resumen">
-                <div class="resumen-items">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Plato</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Subtotal</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="items-pedido">
-                            <!-- Los items se cargarán dinámicamente -->
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="totales">
-                    <div class="total-linea">
-                        <span>Subtotal:</span>
-                        <span id="subtotal">S/ 0.00</span>
-                    </div>
-                    <div class="total-linea" id="costo-delivery-container">
-                        <span>Costo de Delivery:</span>
-                        <span id="costo-delivery">S/ 0.00</span>
-                    </div>
-                    <div class="total-linea total">
-                        <span>TOTAL:</span>
-                        <span id="total-pedido">S/ 0.00</span>
-                    </div>
-                </div>
-            </div>
-
-            <!--<div class="metodos-pago">
-                <h3>Método de Pago</h3>
-                <div class="opciones-pago">
-                    <div class="opcion-pago">
-                        <input type="radio" id="pago-efectivo" name="metodo-pago" value="efectivo" checked>
-                        <label for="pago-efectivo">
-                            <i class="fas fa-money-bill-wave"></i>
-                            Efectivo
-                        </label>
-                    </div>
-                    <div class="opcion-pago">
-                        <input type="radio" id="pago-yape" name="metodo-pago" value="yape">
-                        <label for="pago-yape">
-                            <i class="fas fa-mobile-alt"></i>
-                            Yape
-                        </label>
-                    </div>
-                </div>
-
-                <div id="qr-yape" class="qr-container">
-                    <img src="img/qr-yape.jpg" alt="Código QR Yape">
-                    <p>Escanee el código para pagar con Yape</p>
-                </div>
-            </div>-->
-
-            <button class="btn-confirmar">Confirmar Pedido</button>
-        </div>
     </main>
-
-    <!-- Modal para opciones de carne -->
     <div class="modal-opciones" id="modal-opciones">
-        <div class="modal-contenido">
-            <button class="modal-cerrar">&times;</button>
+        <div class="modal-contenido"><button class="modal-cerrar">×</button>
             <h2 id="modal-titulo">Opciones para <span id="modal-nombre-plato"></span></h2>
-            <div class="form-group">
-                <label>Término de cocción *</label>
-                <select id="modal-termino" required>
+            <div class="form-group"><label>Término de cocción *</label><select id="modal-termino" required="">
                     <option value="">Seleccionar término</option>
                     <option value="medio">Medio</option>
                     <option value="3/4">3/4</option>
                     <option value="bien cocido">Bien cocido</option>
                     <option value="azul">Azul</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Acompañamiento *</label>
-                <select id="modal-acompanamiento" required>
+                </select></div>
+            <div class="form-group"><label>Acompañamiento *</label><select id="modal-acompanamiento" required="">
                     <option value="">Seleccionar acompañamiento</option>
                     <option value="papas fritas">Papas fritas</option>
                     <option value="papas grilladas">Papas grilladas</option>
                     <option value="papas fritas y arroz">Papas fritas y arroz</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Notas adicionales</label>
-                <textarea id="modal-notas" placeholder="Ej: Sin sal, bien dorado, etc."></textarea>
-            </div>
-            <button class="btn-confirmar" id="modal-agregar">Agregar al pedido</button>
+                </select></div>
+            <div class="form-group"><label>Notas adicionales</label><textarea id="modal-notas"
+                    placeholder="Ej: Sin sal, bien dorado, etc."></textarea></div><button class="btn-confirmar"
+                id="modal-agregar">Agregar al pedido</button>
         </div>
     </div>
 
     <script src="pedidos.js"></script>
+
 </body>
 
 </html>
