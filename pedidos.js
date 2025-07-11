@@ -741,47 +741,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     opcionesPedido.forEach(opcion => {
         opcion.addEventListener('click', () => {
+            const nuevoTipo = opcion.dataset.tipo;
+
+            // Si ya hay ítems y el tipo es diferente
+            if (pedido.items.length > 0 && pedido.tipo && pedido.tipo !== nuevoTipo) {
+                const confirmarCambio = confirm(`Tu pedido actual está seleccionado para "${pedido.tipo}". Si cambias a "${nuevoTipo}", se eliminarán todos los platos. ¿Deseas continuar?`);
+                if (!confirmarCambio) {
+                    return; // cancelar cambio
+                }
+            }
+
+            // Continuar con el cambio de tipo
             opcionesPedido.forEach(o => o.classList.remove('activo'));
             opcion.classList.add('activo');
 
-            const tipo = opcion.dataset.tipo;
-            pedido.tipo = tipo;
+            pedido.tipo = nuevoTipo;
+            pedido.items = [];
+            pedido.subtotal = 0;
+            pedido.costoDelivery = 0;
 
+            actualizarResumen();
+
+            // Mostrar formulario correspondiente
             document.querySelectorAll('.formulario-pedido').forEach(form => {
                 form.classList.remove('activo');
             });
-            document.getElementById(`form-${tipo}`).classList.add('activo');
+            document.getElementById(`form-${nuevoTipo}`).classList.add('activo');
 
-            if (tipo === 'delivery') {
-                actualizarCostoDelivery();
-            } else {
-                pedido.costoDelivery = 0;
-                actualizarTotales();
-            }
-
-            document.getElementById('costo-delivery-container').style.display =
-                tipo === 'delivery' ? 'flex' : 'none';
-
-            // Mostrar el bloque oculto con animación
-            // === MOSTRAR EL BLOQUE INTERACTIVO CON ANIMACIÓN Y SCROLL ===
+            // Mostrar bloque con fade-in
             const bloque = document.getElementById('bloque-interactivo');
             bloque.style.display = 'none';
-
             setTimeout(() => {
                 bloque.style.display = 'block';
                 bloque.classList.remove('fade-in');
                 void bloque.offsetWidth;
                 bloque.classList.add('fade-in');
 
-                // 👇 Esta es la línea que hace scroll automático hacia abajo
-                bloque.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                // Hacer scroll hacia el bloque
+                bloque.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
 
+
+            // Mantener categoría activa
+            let categoriaActiva = document.querySelector(".filtro-btn.active");
+            if (!categoriaActiva) {
+                categoriaActiva = document.querySelector(".filtro-btn");
+                if (categoriaActiva) categoriaActiva.classList.add("active");
+            }
+            const nombreCategoria = categoriaActiva?.dataset.categoria || "carne";
+            cargarPlatos(nombreCategoria);
         });
     });
+
 
     const distritoSelect = document.getElementById('distrito-delivery');
     if (distritoSelect) {
@@ -815,8 +826,9 @@ document.addEventListener('DOMContentLoaded', function () {
             platoItem.className = 'plato-item';
             platoItem.dataset.id = plato.id;
 
-            const itemsPlato = pedido.items.filter(item => item.id === plato.id);
-            const cantidad = itemsPlato.length;
+            const cantidad = pedido.items
+                .filter(item => item.id === plato.id)
+                .reduce((total, item) => total + (item.cantidad || 1), 0);
 
             platoItem.innerHTML = `
                 <div class="plato-imagen"><img src="${plato.imagen}" alt="${plato.nombre}"></div>
@@ -854,11 +866,45 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function agregarItemPedido(id, nombre, precio, tipo, opciones = {}) {
-        const nuevoItem = { id, nombre, precio, tipo, opciones };
-        pedido.items.push(nuevoItem);
+        // Buscar si ya existe un ítem idéntico
+        const itemExistente = pedido.items.find(item => {
+            if (item.id !== id || item.tipo !== tipo) return false;
+
+            // Comparar solo si es carne
+            if (tipo === 'carne') {
+                return item.opciones.termino === opciones.termino &&
+                    item.opciones.acompanamiento === opciones.acompanamiento &&
+                    (item.opciones.notas || '') === (opciones.notas || '');
+            }
+
+            return true; // No carne, mismo ID basta
+        });
+
+        if (itemExistente) {
+            itemExistente.cantidad = (itemExistente.cantidad || 1) + 1;
+        } else {
+            pedido.items.push({
+                id,
+                nombre,
+                precio,
+                tipo,
+                opciones,
+                cantidad: 1
+            });
+        }
+
         actualizarResumen();
-        cargarPlatos();
+
+        // Recargar la lista de platos sin perder categoría activa
+        const categoriaActiva = document.querySelector('.filtro-btn.active')?.dataset.categoria;
+        if (categoriaActiva) {
+            cargarPlatos(categoriaActiva);
+        }
     }
+
+
+
+
 
     function eliminarPlato(platoId) {
         const index = pedido.items.findIndex(item => item.id === platoId);
@@ -890,8 +936,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            const precioTotal = precioItem + extraTaper;
-            pedido.subtotal += precioTotal;
+            const precioUnitario = precioItem + extraTaper;
+            const totalPorItem = precioUnitario * item.cantidad;
+            pedido.subtotal += totalPorItem;
 
             let opcionesHTML = '';
             if (item.tipo === 'carne') {
@@ -907,9 +954,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const tr = document.createElement('tr');
             tr.innerHTML = `
             <td>${item.nombre}${opcionesHTML}${textoTaper}</td>
-            <td>1</td>
-            <td>S/${precioTotal.toFixed(2)}</td>
-            <td>S/${precioTotal.toFixed(2)}</td>
+            <td>${item.cantidad}</td>
+            <td>S/${precioUnitario.toFixed(2)}</td>
+            <td>S/${totalPorItem.toFixed(2)}</td>
             <td class="eliminar-item" data-index="${index}"><i class="fas fa-trash"></i></td>
         `;
             tbody.appendChild(tr);
@@ -922,10 +969,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const index = parseInt(this.dataset.index);
                 pedido.items.splice(index, 1);
                 actualizarResumen();
-                cargarPlatos(document.querySelector('.filtro-btn.active').dataset.categoria);
+                cargarPlatos(document.querySelector('.filtro-btn.active')?.dataset.categoria || "carne");
             });
         });
     }
+
 
 
 
@@ -950,8 +998,15 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('active');
             const categoria = this.dataset.categoria;
             cargarPlatos(categoria);
+
+            // Scroll automático hacia la lista de platos
+            const listaPlatos = document.querySelector('.lista-platos');
+            if (listaPlatos) {
+                listaPlatos.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
+
 
     document.querySelector('.btn-confirmar').addEventListener('click', function () {
         let formularioValido = true;
@@ -1056,45 +1111,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     // Reinicia el pedido si el cliente cambia el tipo de servicio (delivery, recojo, mesa, etc.)
-    document.querySelectorAll('.opcion').forEach(opcion => {
-        opcion.addEventListener('click', function () {
-            const nuevoTipo = this.dataset.tipo;
-
-            // Confirmar si ya había ítems en el carrito
-            if (pedido.items.length > 0) {
-                const confirmar = confirm("Cambiar el tipo de servicio eliminará todos los platos seleccionados. ¿Deseas continuar?");
-                if (!confirmar) return;
-            }
-
-            // Quitar clase "activo" de todos
-            document.querySelectorAll('.opcion').forEach(o => o.classList.remove('activo'));
-            // Activar la opción seleccionada
-            this.classList.add('activo');
-
-            // Guardar tipo en objeto pedido
-            pedido.tipo = nuevoTipo;
-            pedido.items = [];
-            pedido.subtotal = 0;
-
-            actualizarResumen();
-
-            // Detectar categoría activa o activar la primera si no hay
-            let categoriaActiva = document.querySelector(".filtro-btn.active");
-            if (!categoriaActiva) {
-                categoriaActiva = document.querySelector(".filtro-btn");
-                if (categoriaActiva) categoriaActiva.classList.add("active");
-            }
-
-            // Obtener el nombre de la categoría y cargar sus platos
-            const nombreCategoria = categoriaActiva?.dataset.categoria;
-            if (nombreCategoria) {
-                cargarPlatos(nombreCategoria);
-            }
-
-        });
-    });
 
 
-    cargarPlatos("carne"); // O cualquier otra categoría si prefieres otra por defecto
+
+    // Detectar si hay una categoría activa visualmente
+    let btnActivo = document.querySelector(".filtro-btn.active");
+    if (!btnActivo) {
+        btnActivo = document.querySelector(".filtro-btn");
+        if (btnActivo) btnActivo.classList.add("active");
+    }
+
+    const catActiva = btnActivo?.dataset.categoria || "carne";
+    cargarPlatos(catActiva);
+    // O cualquier otra categoría si prefieres otra por defecto
 
 });
