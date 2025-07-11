@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', function () {
         document.querySelector('.preloader').classList.add('loaded');
@@ -1040,8 +1041,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (pedido.items.length === 0) {
-            formularioValido = false;
             alert('Por favor seleccione al menos un plato');
+            return;
         }
 
         if (!formularioValido) {
@@ -1049,38 +1050,59 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        fetch('puente.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                ...pedido,
-                mesa: pedido.tipo === 'mesa' ? document.getElementById('mesa-numero').value : null,
-                mozo: pedido.tipo === 'mesa' ? document.getElementById('mozo-mesa').value : null
-            })
-        })
-            .then(response => response.text())
-            .then(data => {
-                alert(data);
-                document.querySelectorAll('input,select,textarea').forEach(el => {
-                    if (el.type !== 'radio' && el.type !== 'checkbox') {
-                        el.value = '';
-                    }
-                });
-                pedido = {
-                    tipo: "reservacion",
-                    items: [],
-                    costoDelivery: 0,
-                    subtotal: 0,
-                    total: 0
-                };
-                actualizarResumen();
-                cargarPlatos();
-            })
-            .catch(error => {
-                alert('❌ Error al enviar el pedido.');
-                console.error(error);
-            });
+        // Generar mensaje de WhatsApp compatible y ordenado
+        let mensaje = `*📋 NUEVO PEDIDO (${pedido.tipo.toUpperCase()})*\n\n`;
+
+        // Datos según el tipo de pedido
+        if (pedido.tipo === 'reservacion') {
+            mensaje += `👤 Nombre: ${document.getElementById('nombre-reserva').value}\n`;
+            mensaje += `📞 Celular: ${document.getElementById('celular-reserva').value}\n`;
+            mensaje += `📅 Fecha: ${document.getElementById('fecha-reserva').value}\n`;
+            mensaje += `⏰ Hora: ${document.getElementById('hora-reserva').value}\n`;
+            mensaje += `👥 Personas: ${document.getElementById('personas-reserva').value}\n\n`;
+        } else if (pedido.tipo === 'delivery') {
+            mensaje += `👤 Nombre: ${document.getElementById('nombre-delivery').value}\n`;
+            mensaje += `📞 Celular: ${document.getElementById('celular-delivery').value}\n`;
+            mensaje += `🏠 Dirección: ${document.getElementById('direccion-delivery').value}\n`;
+            mensaje += `📍 Distrito: ${document.getElementById('distrito-delivery').value}\n`;
+            const ref = document.getElementById('referencia-delivery').value;
+            if (ref) mensaje += `📌 Referencia: ${ref}\n`;
+            mensaje += `💸 Delivery: S/${pedido.costoDelivery.toFixed(2)}\n\n`;
+        } else if (pedido.tipo === 'recojo') {
+            mensaje += `🥸 Nombre: ${document.getElementById('nombre-recojo').value}\n`;
+            mensaje += `📞 Celular: ${document.getElementById('celular-recojo').value}\n`;
+            mensaje += `⏰ Hora de recojo: ${document.getElementById('hora-recojo').value}\n\n`;
+        } else if (pedido.tipo === 'mesa') {
+            mensaje += `🪑 Mesa: ${document.getElementById('mesa-numero').value}\n`;
+            mensaje += `🙋‍♂️ Mozo: ${document.getElementById('mozo-mesa').value}\n\n`;
+        }
+
+        // Agregar resumen de platos
+        mensaje += `🍽️ *PLATOS SELECCIONADOS:*\n`;
+        pedido.items.forEach((item, i) => {
+            mensaje += `\n${i + 1}. ${item.nombre} (x${item.cantidad}) - S/${item.precio.toFixed(2)}\n`;
+            if (item.tipo === 'carne') {
+                mensaje += `   - Término: ${item.opciones.termino || 'No especificado'}\n`;
+                mensaje += `   - Acompañamiento: ${item.opciones.acompanamiento || 'Ninguno'}\n`;
+                if (item.opciones.notas) {
+                    mensaje += `   - Notas: ${item.opciones.notas}\n`;
+                }
+            }
+        });
+
+        mensaje += `\n🧾 Subtotal: S/${pedido.subtotal.toFixed(2)}`;
+        if (pedido.tipo === 'delivery') {
+            mensaje += `\n🚚 Envío: S/${pedido.costoDelivery.toFixed(2)}`;
+        }
+        mensaje += `\n💰 TOTAL A PAGAR: *S/${pedido.total.toFixed(2)}*`;
+
+        // Número de WhatsApp destino
+        const numeroDestino = "51903288099"; // Reemplaza con el número real
+        const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
     });
+
+
 
     document.getElementById('modal-agregar').addEventListener('click', function () {
         const termino = document.getElementById('modal-termino').value;
@@ -1124,5 +1146,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const catActiva = btnActivo?.dataset.categoria || "carne";
     cargarPlatos(catActiva);
     // O cualquier otra categoría si prefieres otra por defecto
+    // Ocultar métodos de pago (temporal)
+    document.querySelectorAll('.opcion-pago, .metodo-pago').forEach(el => {
+        el.style.display = 'none';
+    });
 
 });
